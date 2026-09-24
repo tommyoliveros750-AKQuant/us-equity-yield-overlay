@@ -1,7 +1,7 @@
 # Systematic US Equities & Derivatives Overlay Strategy
-Managed by: **[YOUR UK LIMITED COMPANY NAME] LTD**  
+Managed by: **LURAVA LTD**  
 *Registered Corporate Tech & Quantitative Research Provider (England & Wales)*  
-**Inbound Enquiries:** info@[yourdomain].co.uk  
+**Inbound Enquiries:** ter8701col@gmail.com
 
 ---
 
