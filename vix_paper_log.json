@@ -1,0 +1,19 @@
+{
+  "trades": [],
+  "total_pnl": 0,
+  "wins": 0,
+  "losses": 0,
+  "last_model": {
+    "call_short": 775,
+    "call_long": 800,
+    "put_short": 685,
+    "put_long": 660,
+    "credit": 14.0,
+    "max_profit": 1400.0,
+    "max_loss": 1800.0,
+    "expiry": "2026-08-17",
+    "win_prob": 68
+  },
+  "last_vix": 18.2,
+  "last_run": "2026-07-03"
+}

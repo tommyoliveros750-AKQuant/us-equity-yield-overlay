@@ -1,0 +1,53 @@
+[
+  {
+    "date": "2026-04-24",
+    "results": [
+      {
+        "ticker": "KO",
+        "name": "Coca-Cola",
+        "type": "Consumer Staples",
+        "price": 76.28,
+        "yield": 3.1,
+        "streak": 62,
+        "passes": 6,
+        "total": 7,
+        "decision": "WATCHLIST",
+        "criteria": {
+          "C1_Revenue": "PASS",
+          "C2_Moat": "PASS",
+          "C3_DivGrowth": "PASS",
+          "C4_Payout": "PASS",
+          "C5_ROE": "PASS",
+          "C6_FCF": "FAIL",
+          "C7_Management": "PASS"
+        },
+        "annual_div_5k": 155
+      },
+      {
+        "ticker": "JNJ",
+        "name": "Johnson & Johnson",
+        "type": "Healthcare",
+        "price": 230.65,
+        "yield": 3.3,
+        "streak": 62,
+        "passes": 6,
+        "total": 7,
+        "decision": "WATCHLIST",
+        "criteria": {
+          "C1_Revenue": "PASS",
+          "C2_Moat": "PASS",
+          "C3_DivGrowth": "PASS",
+          "C4_Payout": "PASS",
+          "C5_ROE": "PASS",
+          "C6_FCF": "FAIL",
+          "C7_Management": "PASS"
+        },
+        "annual_div_5k": 165
+      }
+    ]
+  },
+  {
+    "date": "2026-04-24",
+    "results": []
+  }
+]

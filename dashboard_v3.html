@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AK Command Centre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #080a0d;
+  --bg1:      #0d1117;
+  --bg2:      #111820;
+  --bg3:      #161e2a;
+  --border:   #1c2a38;
+  --border2:  #243040;
+  --green:    #00e5a0;
+  --green2:   #00b87c;
+  --green-bg: rgba(0,229,160,0.06);
+  --red:      #ff4d6a;
+  --red-bg:   rgba(255,77,106,0.06);
+  --amber:    #ffb340;
+  --amber-bg: rgba(255,179,64,0.06);
+  --blue:     #4d9fff;
+  --blue-bg:  rgba(77,159,255,0.06);
+  --muted:    #4a6070;
+  --text:     #c8d8e8;
+  --bright:   #e8f4ff;
+  --mono:     'Space Mono', monospace;
+  --sans:     'Syne', sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 12px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* SCANLINES EFFECT */
+body::before {
+  content:'';
+  position:fixed;
+  inset:0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.03) 2px,
+    rgba(0,0,0,0.03) 4px
+  );
+  pointer-events:none;
+  z-index:9999;
+}
+
+/* TOP BAR */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 44px;
+  background: var(--bg1);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.logo {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--bright);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.logo span { color: var(--amber); }
+.market-pill {
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 2px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.pill-open  { background: var(--green-bg); color: var(--green); border: 1px solid var(--green2); }
+.pill-closed{ background: var(--red-bg);   color: var(--red);   border: 1px solid var(--red); }
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+.time-display {
+  color: var(--amber);
+  font-weight: 700;
+}
+.pulse {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: pulse 2s infinite;
+  display: inline-block;
+  margin-right: 5px;
+}
+@keyframes pulse {
+  0%,100% { opacity:1; box-shadow: 0 0 0 0 rgba(0,229,160,0.4); }
+  50% { opacity:.7; box-shadow: 0 0 0 4px rgba(0,229,160,0); }
+}
+
+/* NAV TABS */
+.nav {
+  display: flex;
+  gap: 0;
+  padding: 0 20px;
+  background: var(--bg1);
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+}
+.nav-tab {
+  padding: 10px 18px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all .15s;
+  white-space: nowrap;
+  font-family: var(--sans);
+  font-weight: 600;
+}
+.nav-tab:hover { color: var(--text); }
+.nav-tab.active {
+  color: var(--amber);
+  border-bottom-color: var(--amber);
+}
+
+/* MAIN LAYOUT */
+.main {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.view { display: none; }
+.view.active { display: flex; flex-direction: column; gap: 14px; }
+
+/* GRID LAYOUTS */
+.grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.grid-65-35 { display: grid; grid-template-columns: 1.8fr 1fr; gap: 14px; }
+
+/* CARDS */
+.card {
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 14px;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:2px;
+  background: linear-gradient(90deg, var(--border2), transparent);
+}
+.card.accent-green::before { background: linear-gradient(90deg,var(--green),transparent); }
+.card.accent-amber::before { background: linear-gradient(90deg,var(--amber),transparent); }
+.card.accent-red::before   { background: linear-gradient(90deg,var(--red),transparent); }
+.card.accent-blue::before  { background: linear-gradient(90deg,var(--blue),transparent); }
+
+.card-label {
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+  font-family: var(--sans);
+  font-weight: 600;
+}
+.card-value {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--bright);
+  font-family: var(--sans);
+}
+.card-value.pos { color: var(--green); }
+.card-value.neg { color: var(--red); }
+.card-value.amb { color: var(--amber); }
+.card-sub {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* SECTION HEADER */
+.sec-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.sec-title {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.sec-badge {
+  font-size: 9px;
+  padding: 2px 7px;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.badge-green { background:var(--green-bg); color:var(--green); border:1px solid rgba(0,229,160,.2); }
+.badge-amber { background:var(--amber-bg); color:var(--amber); border:1px solid rgba(255,179,64,.2); }
+.badge-red   { background:var(--red-bg);   color:var(--red);   border:1px solid rgba(255,77,106,.2); }
+.badge-blue  { background:var(--blue-bg);  color:var(--blue);  border:1px solid rgba(77,159,255,.2); }
+
+/* POSITION ROWS */
+.pos-table { width:100%; border-collapse:collapse; }
+.pos-table th {
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: left;
+  padding: 0 6px 8px;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--sans);
+  font-weight: 600;
+}
+.pos-table td {
+  padding: 9px 6px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.pos-table tr:last-child td { border:none; }
+.pos-table tr { transition: background .1s; }
+.pos-table tr:hover { background: rgba(255,255,255,.02); }
+.ticker-cell {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--bright);
+}
+.num { font-family: var(--mono); }
+.pos-num { color: var(--green); }
+.neg-num { color: var(--red); }
+.muted-num { color: var(--muted); }
+
+/* SPARKBAR */
+.spark {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 24px;
+  padding: 2px 0;
+}
+.spark-bar {
+  width: 4px;
+  border-radius: 1px;
+  transition: height .3s ease;
+}
+
+/* ALERT ROW */
+.alert-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.alert-item:last-child { border:none; }
+.alert-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.alert-body { flex: 1; }
+.alert-title { color: var(--bright); font-size: 12px; margin-bottom: 3px; }
+.alert-detail { color: var(--muted); font-size: 11px; line-height: 1.5; }
+
+/* INCOME BARS */
+.income-item { margin-bottom: 12px; }
+.income-header { display:flex; justify-content:space-between; margin-bottom:5px; font-size:11px; }
+.income-bar-bg { height: 4px; background: var(--bg3); border-radius: 2px; }
+.income-bar-fill { height: 4px; border-radius: 2px; transition: width .6s ease; }
+
+/* OPTIONS TABLE */
+.opt-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 11px;
+}
+.opt-row:last-child { border:none; }
+.opt-sym { color: var(--muted); font-size: 10px; letter-spacing: .5px; }
+.opt-side-short { color: var(--amber); font-size: 9px; letter-spacing: 1px; }
+.opt-side-long  { color: var(--blue);  font-size: 9px; letter-spacing: 1px; }
+
+/* PROGRESS RING */
+.ring-wrap { display:flex; align-items:center; gap:14px; }
+.ring-label { font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+/* DANGER METER */
+.danger-meter { position:relative; height:6px; background:var(--bg3); border-radius:3px; overflow:hidden; }
+.danger-fill { height:100%; border-radius:3px; transition:width .5s ease; }
+
+/* CHART CANVAS */
+canvas { display:block; }
+
+/* SCROLLABLE */
+.scroll-x { overflow-x: auto; }
+
+/* STATUS INDICATOR */
+.status-row { display:flex; align-items:center; gap:8px; padding:7px 0; border-bottom:1px solid var(--border); font-size:11px; }
+.status-row:last-child { border:none; }
+.status-icon { font-size:14px; flex-shrink:0; }
+
+/* COMMAND REFERENCE */
+.cmd-grid { display:grid; grid-template-columns:1fr 1fr; gap:6px; }
+.cmd-item { background:var(--bg2); border:1px solid var(--border); border-radius:3px; padding:8px 10px; }
+.cmd-name { color:var(--amber); font-size:11px; font-weight:700; margin-bottom:3px; }
+.cmd-desc { color:var(--muted); font-size:10px; line-height:1.4; }
+
+.divider { height:1px; background:var(--border); margin: 4px 0; }
+
+@keyframes fadeIn { from{opacity:0;transform:translateY(4px)} to{opacity:1;transform:translateY(0)} }
+.view.active { animation: fadeIn .2s ease; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="logo">AK <span>Command</span> Centre</div>
+    <div class="market-pill pill-closed" id="mkt-pill">● CLOSED</div>
+    <span style="color:var(--muted);font-size:10px;letter-spacing:1px" id="mkt-hours">Opens 14:30 London</span>
+  </div>
+  <div class="topbar-right">
+    <span>DANGER <span style="color:var(--green);font-weight:700">10/100</span></span>
+    <span>EXPANSION PHASE</span>
+    <span class="time-display" id="clock">--:--:--</span>
+    <span><span class="pulse"></span>LIVE</span>
+  </div>
+</div>
+
+<div class="nav">
+  <div class="nav-tab active" onclick="showTab('portfolio')">Portfolio</div>
+  <div class="nav-tab" onclick="showTab('options')">Options</div>
+  <div class="nav-tab" onclick="showTab('income')">Income</div>
+  <div class="nav-tab" onclick="showTab('alerts')">Alerts</div>
+  <div class="nav-tab" onclick="showTab('record')">Track Record</div>
+  <div class="nav-tab" onclick="showTab('commands')">Commands</div>
+</div>
+
+<div class="main">
+
+<!-- ── PORTFOLIO ── -->
+<div class="view active" id="tab-portfolio">
+  <div class="grid-4">
+    <div class="card accent-green">
+      <div class="card-label">True net return</div>
+      <div class="card-value pos">+$7,005</div>
+      <div class="card-sub">+7.0% on $100,000</div>
+    </div>
+    <div class="card accent-amber">
+      <div class="card-label">Options income banked</div>
+      <div class="card-value amb">$5,739</div>
+      <div class="card-sub">Real cash collected</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Raw portfolio value</div>
+      <div class="card-value" id="pv-display">$98,894</div>
+      <div class="card-sub" id="pv-pl">-$1,106 from $100k</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Cash · buying power</div>
+      <div class="card-value" style="font-size:16px">$3,136</div>
+      <div class="card-sub" style="color:var(--red)">⚠ Below 5% minimum</div>
+    </div>
+  </div>
+
+  <div class="grid-65-35">
+    <div class="card accent-green">
+      <div class="sec-head">
+        <div class="sec-title">Stock positions</div>
+        <div class="sec-badge badge-green">5 POSITIONS</div>
+      </div>
+      <div class="scroll-x">
+      <table class="pos-table">
+        <thead>
+          <tr>
+            <th>Ticker</th><th>Shares</th><th>Entry</th><th>Current</th>
+            <th>Value</th><th>P&L</th><th>%</th><th>CC</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="ticker-cell">AAPL</div><div style="font-size:9px;color:var(--muted)">Technology</div></td>
+            <td class="num">100</td>
+            <td class="num muted-num">$268.34</td>
+            <td class="num">$276.36</td>
+            <td class="num">$27,636</td>
+            <td class="num pos-num">+$786</td>
+            <td><span class="sec-badge badge-green">+2.9%</span></td>
+            <td class="num" style="color:var(--amber)">1 CC</td>
+          </tr>
+          <tr>
+            <td><div class="ticker-cell">MSFT</div><div style="font-size:9px;color:var(--muted)">Technology</div></td>
+            <td class="num">23</td>
+            <td class="num muted-num">$425.03</td>
+            <td class="num">$414.55</td>
+            <td class="num">$9,535</td>
+            <td class="num neg-num">-$198</td>
+            <td><span class="sec-badge badge-red">-2.0%</span></td>
+            <td style="color:var(--muted);font-size:10px">Need 77</td>
+          </tr>
+          <tr>
+            <td><div class="ticker-cell">SCHD</div><div style="font-size:9px;color:var(--muted)">Dividend ETF</div></td>
+            <td class="num">494</td>
+            <td class="num muted-num">$31.43</td>
+            <td class="num">$31.53</td>
+            <td class="num">$15,576</td>
+            <td class="num pos-num">+$71</td>
+            <td><span class="sec-badge badge-green">+0.5%</span></td>
+            <td class="num" style="color:var(--amber)">4 CC</td>
+          </tr>
+          <tr>
+            <td><div class="ticker-cell">V</div><div style="font-size:9px;color:var(--muted)">Financials</div></td>
+            <td class="num">100</td>
+            <td class="num muted-num">$309.50</td>
+            <td class="num">$328.74</td>
+            <td class="num">$32,874</td>
+            <td class="num pos-num">+$1,848</td>
+            <td><span class="sec-badge badge-green">+6.0%</span></td>
+            <td class="num" style="color:var(--amber)">1 CC</td>
+          </tr>
+          <tr>
+            <td><div class="ticker-cell">VICI</div><div style="font-size:9px;color:var(--muted)">REIT</div></td>
+            <td class="num">400</td>
+            <td class="num muted-num">$28.60</td>
+            <td class="num">$28.77</td>
+            <td class="num">$11,508</td>
+            <td class="num neg-num">-$334</td>
+            <td><span class="sec-badge badge-amber">-2.9%</span></td>
+            <td class="num" style="color:var(--amber)">4 CC</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div class="card accent-blue">
+        <div class="sec-head">
+          <div class="sec-title">Allocation</div>
+          <div class="sec-badge badge-blue">5 STOCKS</div>
+        </div>
+        <div id="alloc-bars">
+          <div class="income-item">
+            <div class="income-header"><span style="color:var(--bright)">V</span><span style="color:var(--green)">33.8%</span></div>
+            <div class="income-bar-bg"><div class="income-bar-fill" style="width:33.8%;background:var(--green)"></div></div>
+          </div>
+          <div class="income-item">
+            <div class="income-header"><span style="color:var(--bright)">AAPL</span><span style="color:var(--green)">28.5%</span></div>
+            <div class="income-bar-bg"><div class="income-bar-fill" style="width:28.5%;background:var(--blue)"></div></div>
+          </div>
+          <div class="income-item">
+            <div class="income-header"><span style="color:var(--bright)">SCHD</span><span style="color:var(--amber)">16.1%</span></div>
+            <div class="income-bar-bg"><div class="income-bar-fill" style="width:16.1%;background:var(--amber)"></div></div>
+          </div>
+          <div class="income-item">
+            <div class="income-header"><span style="color:var(--bright)">VICI</span><span style="color:var(--muted)">11.6%</span></div>
+            <div class="income-bar-bg"><div class="income-bar-fill" style="width:11.6%;background:var(--muted)"></div></div>
+          </div>
+          <div class="income-item" style="margin-bottom:0">
+            <div class="income-header"><span style="color:var(--bright)">MSFT</span><span style="color:var(--text)">9.9%</span></div>
+            <div class="income-bar-bg"><div class="income-bar-fill" style="width:9.9%;background:var(--text)"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Macro health</div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:11px">
+          <span style="color:var(--green)">EXPANSION PHASE</span>
+          <span style="color:var(--muted)">VIX 17.7</span>
+        </div>
+        <div style="margin-bottom:6px;font-size:10px;color:var(--muted)">Danger 10/100</div>
+        <div class="danger-meter">
+          <div class="danger-fill" style="width:10%;background:linear-gradient(90deg,var(--green),var(--amber))"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:9px;color:var(--muted)">
+          <span>SAFE</span><span>WARNING 30</span><span>ALERT 50</span><span>CRISIS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── OPTIONS ── -->
+<div class="view" id="tab-options">
+  <div class="grid-4">
+    <div class="card accent-green">
+      <div class="card-label">Cumulative collected</div>
+      <div class="card-value pos">$5,739</div>
+      <div class="card-sub">banked in cash account</div>
+    </div>
+    <div class="card accent-amber">
+      <div class="card-label">Monthly CC income</div>
+      <div class="card-value amb">$986/mo</div>
+      <div class="card-sub">6 active contracts</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Annual CC yield</div>
+      <div class="card-value" style="color:var(--blue)">15.4%</div>
+      <div class="card-sub">on portfolio value</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Options P&L (MtM)</div>
+      <div class="card-value neg">-$185</div>
+      <div class="card-sub">unrealised mark-to-market</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card accent-amber">
+      <div class="sec-head">
+        <div class="sec-title">Active positions</div>
+        <div class="sec-badge badge-amber">6 CONTRACTS</div>
+      </div>
+      <div class="opt-row">
+        <div><div class="opt-sym">AAPL260529P00250000</div><div style="font-size:10px;color:var(--text)">AAPL $250 PUT — exp 29 May</div></div>
+        <div style="text-align:right"><div class="opt-side-short">SHORT</div><div class="pos-num num">+$216</div></div>
+      </div>
+      <div class="opt-row">
+        <div><div class="opt-sym">AAPL260605C00295000</div><div style="font-size:10px;color:var(--text)">AAPL $295 CC — exp 5 Jun</div></div>
+        <div style="text-align:right"><div class="opt-side-short">SHORT</div><div class="pos-num num">+$212</div></div>
+      </div>
+      <div class="opt-row">
+        <div><div class="opt-sym">NVDA260605P00175000</div><div style="font-size:10px;color:var(--text)">NVDA $175 PUT — exp 5 Jun</div></div>
+        <div style="text-align:right"><div class="opt-side-long">LONG</div><div class="pos-num num">+$17</div></div>
+      </div>
+      <div class="opt-row">
+        <div><div class="opt-sym">NVDA260605P00195000</div><div style="font-size:10px;color:var(--text)">NVDA $195 PUT — CLOSING TODAY</div></div>
+        <div style="text-align:right"><div class="opt-side-short">SHORT</div><div class="neg-num num">-$315</div></div>
+      </div>
+      <div class="opt-row">
+        <div><div class="opt-sym">SPY260605P00650000</div><div style="font-size:10px;color:var(--text)">SPY $650 PUT — exp 5 Jun</div></div>
+        <div style="text-align:right"><div class="opt-side-long">LONG</div><div class="pos-num num">+$14</div></div>
+      </div>
+      <div class="opt-row">
+        <div><div class="opt-sym">SPY260605P00685000</div><div style="font-size:10px;color:var(--text)">SPY $685 PUT — exp 5 Jun</div></div>
+        <div style="text-align:right"><div class="opt-side-short">SHORT</div><div class="neg-num num">-$53</div></div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div class="card">
+        <div class="sec-head"><div class="sec-title">CC coverage by position</div></div>
+        <div class="status-row"><div class="status-icon">✓</div><div>AAPL — 1 contract @ $295 strike (Jun 5)</div></div>
+        <div class="status-row"><div class="status-icon" style="color:var(--amber)">○</div><div style="color:var(--muted)">MSFT — 23/100 shares. CSP at $400 running.</div></div>
+        <div class="status-row"><div class="status-icon">✓</div><div>SCHD — 4 contracts @ $33 strike (Jun 12)</div></div>
+        <div class="status-row"><div class="status-icon">✓</div><div>V — 1 contract @ $350 strike (Jun 12)</div></div>
+        <div class="status-row"><div class="status-icon" style="color:var(--amber)">⚠</div><div>VICI — 4 contracts, expiry check needed</div></div>
+      </div>
+      <div class="card accent-green">
+        <div class="card-label">NVDA limit order (GTC)</div>
+        <div class="card-value" style="font-size:16px;color:var(--blue)">105 shares @ $194.19</div>
+        <div class="card-sub">Fills automatically when NVDA hits $194.19</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── INCOME ── -->
+<div class="view" id="tab-income">
+  <div class="grid-4">
+    <div class="card accent-green">
+      <div class="card-label">Monthly CC income</div>
+      <div class="card-value pos">$986/mo</div>
+      <div class="card-sub">6 active contracts</div>
+    </div>
+    <div class="card accent-amber">
+      <div class="card-label">Annual CC yield</div>
+      <div class="card-value amb">15.4%/yr</div>
+      <div class="card-sub">on $98,894 portfolio</div>
+    </div>
+    <div class="card">
+      <div class="card-label">MSFT unlock potential</div>
+      <div class="card-value" style="color:var(--blue)">+$500/mo</div>
+      <div class="card-sub">when 100 shares reached</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Full deployment target</div>
+      <div class="card-value" style="font-size:16px;color:var(--bright)">$1,700/mo</div>
+      <div class="card-sub">when all positions complete</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card accent-green">
+      <div class="sec-head"><div class="sec-title">Income breakdown</div><div class="sec-badge badge-green">MONTHLY</div></div>
+      <div class="income-item">
+        <div class="income-header"><span style="color:var(--bright)">V covered call</span><span class="pos-num">$444/mo</span></div>
+        <div class="income-bar-bg"><div class="income-bar-fill" style="width:100%;background:var(--green)"></div></div>
+      </div>
+      <div class="income-item">
+        <div class="income-header"><span style="color:var(--bright)">AAPL covered call</span><span class="pos-num">$374/mo</span></div>
+        <div class="income-bar-bg"><div class="income-bar-fill" style="width:84%;background:var(--green2)"></div></div>
+      </div>
+      <div class="income-item">
+        <div class="income-header"><span style="color:var(--bright)">SCHD × 4 contracts</span><span class="pos-num">$168/mo</span></div>
+        <div class="income-bar-bg"><div class="income-bar-fill" style="width:38%;background:var(--amber)"></div></div>
+      </div>
+      <div class="income-item" style="margin-bottom:0;opacity:.4">
+        <div class="income-header"><span style="color:var(--bright)">VICI × 4 contracts</span><span style="color:var(--muted)">pending</span></div>
+        <div class="income-bar-bg"><div class="income-bar-fill" style="width:0%;background:var(--muted)"></div></div>
+      </div>
+      <div class="divider" style="margin-top:12px"></div>
+      <div style="display:flex;justify-content:space-between;padding-top:10px;font-size:12px">
+        <span style="color:var(--muted)">Running total</span>
+        <span style="color:var(--green);font-weight:700">$986/mo · $11,832/yr</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="sec-head"><div class="sec-title">6-month projection</div></div>
+      <div class="opt-row"><span style="color:var(--muted)">Month 1</span><span class="num pos-num">$986/mo</span></div>
+      <div class="opt-row"><span style="color:var(--muted)">Month 2 (VICI fixed)</span><span class="num pos-num">~$1,142/mo</span></div>
+      <div class="opt-row"><span style="color:var(--muted)">Month 3 (O added)</span><span class="num pos-num">~$1,215/mo</span></div>
+      <div class="opt-row"><span style="color:var(--muted)">Month 4 (KO added)</span><span class="num pos-num">~$1,280/mo</span></div>
+      <div class="opt-row"><span style="color:var(--muted)">Month 6 (MSFT 100sh)</span><span class="num pos-num">~$1,700/mo</span></div>
+      <div class="divider" style="margin-top:4px"></div>
+      <div class="opt-row" style="font-weight:700">
+        <span style="color:var(--bright)">Year 1 total</span>
+        <span style="color:var(--green)">~$14,400+</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ALERTS ── -->
+<div class="view" id="tab-alerts">
+  <div class="grid-2">
+    <div class="card accent-red">
+      <div class="sec-head"><div class="sec-title">Action required</div><div class="sec-badge badge-red">1 URGENT</div></div>
+      <div class="alert-item">
+        <div class="alert-dot" style="background:var(--red)"></div>
+        <div class="alert-body">
+          <div class="alert-title">NVDA spread closing today</div>
+          <div class="alert-detail">OPG order queued. Both legs fill automatically at 2:30pm London. No action needed from you.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card accent-amber">
+      <div class="sec-head"><div class="sec-title">Review — take profit</div><div class="sec-badge badge-amber">2 ITEMS</div></div>
+      <div class="alert-item">
+        <div class="alert-dot" style="background:var(--amber)"></div>
+        <div class="alert-body">
+          <div class="alert-title">AAPL put $250 — +72% profit</div>
+          <div class="alert-detail">Close order queued as OPG. Locks in $216. AK 50% rule triggered. Fills automatically today.</div>
+        </div>
+      </div>
+      <div class="alert-item">
+        <div class="alert-dot" style="background:var(--muted)"></div>
+        <div class="alert-body">
+          <div class="alert-title">AAPL call $295 — +53% profit · DO NOT CLOSE</div>
+          <div class="alert-detail">This is an active covered call, not a spread. The 50% rule does not apply. Let expire 5 June and keep full premium.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="sec-head"><div class="sec-title">Monitor — no action needed</div><div class="sec-badge badge-blue">5 ITEMS</div></div>
+      <div class="status-row"><div class="status-icon" style="color:var(--amber)">⚠</div><div>MSFT -2.0% — below 200SMA, hold, no add. CSP running at $400.</div></div>
+      <div class="status-row"><div class="status-icon" style="color:var(--amber)">⚠</div><div>VICI -2.9% — REIT weakness in expansion phase. Watch if continues below $27.</div></div>
+      <div class="status-row"><div class="status-icon" style="color:var(--amber)">⚠</div><div>Cash 3.2% — below 5% AK minimum. Rebuilds from incoming CC premium.</div></div>
+      <div class="status-row"><div class="status-icon" style="color:var(--amber)">⚠</div><div>SPY spread -$53 — within normal range, 30 days left, on track.</div></div>
+      <div class="status-row"><div class="status-icon" style="color:var(--amber)">⚠</div><div>AAPL approaching $295 CC strike — $19 gap remaining, 30 days.</div></div>
+    </div>
+
+    <div class="card accent-green">
+      <div class="sec-head"><div class="sec-title">Upcoming actions</div></div>
+      <div class="status-row"><div class="status-icon">📋</div><div>Tomorrow: ak-scan O after Realty Income earnings</div></div>
+      <div class="status-row"><div class="status-icon">📋</div><div>Tomorrow: MSFT CSP at $400 — collateral available after T+1</div></div>
+      <div class="status-row"><div class="status-icon">📋</div><div>Monday: ak-cycle + ak-earnings weekly scan</div></div>
+      <div class="status-row"><div class="status-icon">📋</div><div>This week: Open AJ Bell SIPP — both directors</div></div>
+      <div class="status-row"><div class="status-icon">📋</div><div>This week: Fund IBKR ISA £20,000 and deploy</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── TRACK RECORD ── -->
+<div class="view" id="tab-record">
+  <div class="grid-4">
+    <div class="card accent-green">
+      <div class="card-label">True return</div>
+      <div class="card-value pos">+4.82%</div>
+      <div class="card-sub">+$4,823 on $100,000</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Days completed</div>
+      <div class="card-value amb">6 / 90</div>
+      <div class="card-sub">84 days remaining</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Max drawdown</div>
+      <div class="card-value pos">1.59%</div>
+      <div class="card-sub">Limit: 8% · Well within</div>
+    </div>
+    <div class="card">
+      <div class="card-label">TTP compliance</div>
+      <div class="card-value" style="color:var(--blue)">5/8</div>
+      <div class="card-sub">3 rules need time to pass</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="sec-head"><div class="sec-title">Daily log</div><div class="sec-badge badge-amber">6 DAYS</div></div>
+      <table class="pos-table">
+        <thead><tr><th>Date</th><th>Portfolio</th><th>Daily P&L</th><th>Drawdown</th></tr></thead>
+        <tbody>
+          <tr><td class="muted-num">24 Apr</td><td class="num">$99,966</td><td class="neg-num num">-$34</td><td class="num muted-num">0.03%</td></tr>
+          <tr><td class="muted-num">27 Apr</td><td class="num">$99,498</td><td class="neg-num num">-$468</td><td class="num muted-num">0.50%</td></tr>
+          <tr><td class="muted-num">28 Apr</td><td class="num">$99,480</td><td class="neg-num num">-$18</td><td class="num muted-num">0.52%</td></tr>
+          <tr><td class="muted-num">29 Apr</td><td class="num">$100,689</td><td class="pos-num num">+$1,209</td><td class="num muted-num">0.00%</td></tr>
+          <tr><td class="muted-num">01 May</td><td class="num">$100,665</td><td class="neg-num num">-$24</td><td class="num muted-num">0.02%</td></tr>
+          <tr><td class="muted-num">05 May</td><td class="num">$99,084</td><td class="neg-num num">-$1,582</td><td class="num muted-num">1.59%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="sec-head"><div class="sec-title">TTP compliance</div></div>
+      <div class="status-row"><div class="status-icon" style="color:var(--red)">✗</div><div>30+ days — need 24 more ak-daily runs</div></div>
+      <div class="status-row"><div class="status-icon" style="color:var(--red)">✗</div><div>Profit target 8% — at 4.82%, need 3.2% more</div></div>
+      <div class="status-row"><div class="status-icon" style="color:var(--red)">✗</div><div>Profit factor 1.5 — currently 0.57 (improving)</div></div>
+      <div class="status-row"><div class="status-icon" style="color:var(--green)">✓</div><div>Max drawdown &lt;8% — at 1.59%, well within</div></div>
+      <div class="status-row"><div class="status-icon" style="color:var(--green)">✓</div><div>Defined risk only — all positions covered</div></div>
+      <div class="status-row"><div class="status-icon" style="color:var(--green)">✓</div><div>No single day &gt;5% loss — clean</div></div>
+      <div class="status-row"><div class="status-icon" style="color:var(--green)">✓</div><div>Daily logging consistent — 6/6 days</div></div>
+      <div class="status-row"><div class="status-icon" style="color:var(--green)">✓</div><div>Strategy document ready — generated</div></div>
+      <div class="divider" style="margin-top:8px"></div>
+      <div style="padding-top:10px;font-size:11px;color:var(--muted)">
+        Evaluation target: <span style="color:var(--amber)">21 July 2026</span> · 
+        Account: <span style="color:var(--bright)">$50,000</span> · 
+        Split: <span style="color:var(--green)">70% → 80%</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── COMMANDS ── -->
+<div class="view" id="tab-commands">
+  <div class="grid-2">
+    <div class="card">
+      <div class="sec-head"><div class="sec-title">Morning routine — daily</div><div class="sec-badge badge-green">EVERY DAY</div></div>
+      <div class="cmd-grid">
+        <div class="cmd-item"><div class="cmd-name">ak-brief</div><div class="cmd-desc">60-second portfolio summary. Start here every morning.</div></div>
+        <div class="cmd-item"><div class="cmd-name">ak-roll</div><div class="cmd-desc">Check expiring options. Any within 7 days alerts immediately.</div></div>
+        <div class="cmd-item"><div class="cmd-name">ak-guard</div><div class="cmd-desc">Drawdown check. Confirms within risk thresholds.</div></div>
+        <div class="cmd-item"><div class="cmd-name">ak-daily</div><div class="cmd-desc">Log track record. Run after brief to count the day.</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="sec-head"><div class="sec-title">Weekly — Monday only</div><div class="sec-badge badge-amber">MONDAY</div></div>
+      <div class="cmd-grid">
+        <div class="cmd-item"><div class="cmd-name">ak-cycle</div><div class="cmd-desc">Economic phase scan. Confirms which sectors to favour.</div></div>
+        <div class="cmd-item"><div class="cmd-name">ak-earnings</div><div class="cmd-desc">Upcoming earnings within 14 days. Never be caught out.</div></div>
+        <div class="cmd-item"><div class="cmd-name">ak-sectors ai</div><div class="cmd-desc">AI sector opportunity scan. NVDA, AMD, TSM, AVGO.</div></div>
+        <div class="cmd-item"><div class="cmd-name">ak-exits</div><div class="cmd-desc">Exit signal monitor. 5 AK rules checked on each position.</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="sec-head"><div class="sec-title">Income — 1st of month</div><div class="sec-badge badge-blue">MONTHLY</div></div>
+      <div class="cmd-grid">
+        <div class="cmd-item"><div class="cmd-name">ak-options</div><div class="cmd-desc">Place covered calls. All OPG — fills at open automatically.</div></div>
+        <div class="cmd-item"><div class="cmd-name">ak-monthly</div><div class="cmd-desc">Full automation. CC + CSP + SPY spread in one command.</div></div>
+        <div class="cmd-item"><div class="cmd-name">ak-income</div><div class="cmd-desc">Live income projection. Shows exact monthly run rate.</div></div>
+        <div class="cmd-item"><div class="cmd-name">ak-divs-cal</div><div class="cmd-desc">Dividend calendar. Ex-dates, payment dates, annual income.</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="sec-head"><div class="sec-title">Analysis and new opportunities</div><div class="sec-badge badge-blue">ON SIGNAL</div></div>
+      <div class="cmd-grid">
+        <div class="cmd-item"><div class="cmd-name">ak-scan AAPL</div><div class="cmd-desc">Full AK 7-criterion analysis. Run before any new buy.</div></div>
+        <div class="cmd-item"><div class="cmd-name">ak-hedge</div><div class="cmd-desc">Macro danger check. Runs automatically in ak-brief.</div></div>
+        <div class="cmd-item"><div class="cmd-name">ak-record</div><div class="cmd-desc">Track record snapshot. Run before TTP application.</div></div>
+        <div class="cmd-item"><div class="cmd-name">ak-ttp</div><div class="cmd-desc">TTP compliance check. Shows exactly what still needs work.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<script>
+// ── CLOCK ──────────────────────────────────────────────────────────────────
+function updateClock() {
+  const now = new Date();
+  const london = new Date(now.toLocaleString("en-US", {timeZone:"Europe/London"}));
+  const est    = new Date(now.toLocaleString("en-US", {timeZone:"America/New_York"}));
+  const pad    = n => String(n).padStart(2,"0");
+  document.getElementById("clock").textContent =
+    `${pad(london.getHours())}:${pad(london.getMinutes())}:${pad(london.getSeconds())} LON`;
+
+  // Market hours check (Mon-Fri 14:30-21:00 London)
+  const day = london.getDay();
+  const h = london.getHours(), m = london.getMinutes();
+  const isOpen = day >= 1 && day <= 5 &&
+    (h > 14 || (h===14 && m >= 30)) && h < 21;
+  const pill = document.getElementById("mkt-pill");
+  const hrs  = document.getElementById("mkt-hours");
+  if (isOpen) {
+    pill.textContent = "● OPEN";
+    pill.className = "market-pill pill-open";
+    hrs.textContent = `Closes ${21}:00 London`;
+  } else {
+    pill.textContent = "● CLOSED";
+    pill.className = "market-pill pill-closed";
+    hrs.textContent = "Opens 14:30 London";
+  }
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// ── TAB NAVIGATION ─────────────────────────────────────────────────────────
+function showTab(id) {
+  document.querySelectorAll(".view").forEach(v => v.classList.remove("active"));
+  document.querySelectorAll(".nav-tab").forEach(t => t.classList.remove("active"));
+  document.getElementById("tab-"+id).classList.add("active");
+  event.target.classList.add("active");
+}
+</script>
+</body>
+</html>

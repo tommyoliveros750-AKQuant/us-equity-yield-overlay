@@ -1,0 +1,29 @@
+CONFIDENTIAL — PROPRIETARY TRADING SYSTEM
+==========================================
+Owner: Tommy Oliveros
+Company: [Your UK Ltd Company Name]
+Created: 2026
+System: AK Trading System — Adam Khoo Whale Investor Methodology
+
+This trading system, including all Python source code, algorithms,
+trading logic, signal generation methodology, options income engine,
+and automated guard system, constitutes proprietary intellectual
+property owned exclusively by Tommy Oliveros.
+
+PROTECTED COMPONENTS:
+- Automated trading algorithms and signal generation
+- Options income engine with 5-guard risk system
+- Autonomous monitoring and self-healing watchdog
+- Economic cycle detection and sector rotation logic
+- Fundamental analysis scan with AK 7-criterion methodology
+- Covered call income automation with phase-aware strikes
+- Duplicate prevention and broker integration layer
+
+ANY unauthorised copying, sharing, redistribution, reverse engineering,
+or use of this system or its components is prohibited.
+
+The outputs of this system (signals, reports, performance records)
+may be shared commercially. The source code and infrastructure
+may never be shared, copied, or distributed.
+
+Last protected: 24 September 2026 21:24

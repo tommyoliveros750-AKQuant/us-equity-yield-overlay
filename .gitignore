@@ -1,0 +1,29 @@
+# AK SYSTEM — NEVER COMMIT ANY OF THESE
+# Source code — proprietary IP
+*.py
+*.sh
+
+# Credentials
+.env
+*.key
+*.secret
+
+# Trading data
+daily_log.json
+options_log.json
+scheduler_log.json
+scheduler_queue.json
+watchdog_log.json
+dividend_log.json
+monthly_automation_log.json
+audit_log.json
+signals_log.json
+system_fingerprint.json
+
+# Backups
+*.bak*
+*.bak
+
+# Only safe to share — outputs and reports
+!reports/
+!PROPRIETARY_NOTICE.txt

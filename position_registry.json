@@ -1,0 +1,114 @@
+{
+  "AAPL": {
+    "type": "GROWTH",
+    "strategy": "AK value + CC income",
+    "reason": "Passed 7/7 criteria. Hold for price appreciation + monthly CC.",
+    "exit_rule": "Exit only on AK signal: 20EMA below 150SMA two weeks + quarterly loss.",
+    "cc_rule": "Roll CC up when within 3% of strike. Never close shares for CC profit %.",
+    "added": "2026-04-22"
+  },
+  "MSFT": {
+    "type": "GROWTH",
+    "strategy": "AK value \u2014 accumulating to 100 shares",
+    "reason": "CONFIDENT BUY 90% confidence. IV $531. Below 200SMA \u2014 CSP entry.",
+    "exit_rule": "Exit only on AK signal. Do not add above 200SMA ($470).",
+    "cc_rule": "CSP at $400 running. When assigned: immediately sell CC.",
+    "added": "2026-04-22"
+  },
+  "SCHD": {
+    "type": "INCOME",
+    "strategy": "Dividend income + covered calls",
+    "reason": "Core dividend ETF. 3.7% yield + 1.5%/mo CC = 22%/yr total.",
+    "exit_rule": "Exit only if SCHD cuts dividend or 150SMA breach sustained.",
+    "cc_rule": "4 contracts. Roll monthly. Never close SCHD for CC profit \u2014 income stock.",
+    "added": "2026-04-22"
+  },
+  "V": {
+    "type": "GROWTH",
+    "strategy": "AK value + CC income",
+    "reason": "Passed 7/7 criteria. Strong uptrend. CC at $350 running.",
+    "exit_rule": "Exit only on AK signal. Currently up +4.6% \u2014 hold.",
+    "cc_rule": "Roll CC up when within 3% of $350 strike. Do not close for profit %.",
+    "added": "2026-04-22"
+  },
+  "VICI": {
+    "type": "INCOME",
+    "strategy": "REIT dividend income + covered calls",
+    "reason": "6.2% monthly dividend yield. 400 shares = 4 CC contracts.",
+    "exit_rule": "Monitor \u2014 REIT underperforms in expansion phase. Exit if below $27.",
+    "cc_rule": "4 contracts monthly. Income stock \u2014 never close for CC profit %.",
+    "added": "2026-04-30"
+  },
+  "O": {
+    "type": "INCOME",
+    "strategy": "Monthly REIT dividend",
+    "reason": "668 consecutive monthly dividends. 5.1% yield. ISA target stock.",
+    "exit_rule": "Exit only if AFFO declines 2+ consecutive quarters.",
+    "cc_rule": "Sell CC once 100 shares confirmed. Monthly income stock.",
+    "added": "2026-05-06"
+  },
+  "AAPL260605C00295000": {
+    "type": "CC",
+    "strategy": "Covered call on AAPL",
+    "reason": "Monthly income on 100 AAPL shares. Strike $295 = 4.5% OTM.",
+    "exit_rule": "DO NOT close for 50% profit. This is income, not a spread.",
+    "close_rule": "Roll up to $305 if AAPL within 3% of $295. Let expire worthless.",
+    "added": "2026-05-05"
+  },
+  "AAPL260529P00250000": {
+    "type": "HEDGE",
+    "strategy": "Protective put \u2014 income from time decay",
+    "reason": "Short put collecting premium. AAPL at $282, put at $250 = far OTM.",
+    "exit_rule": "Close at 50% profit (AK rule for HEDGE/SPREAD). Currently +72%.",
+    "close_rule": "CLOSE THIS \u2014 72% profit, close order queued.",
+    "added": "2026-04-22"
+  },
+  "NVDA260605P00175000": {
+    "type": "SPREAD",
+    "strategy": "Bull put spread \u2014 long leg",
+    "reason": "Protective long put leg of NVDA bull put spread.",
+    "exit_rule": "Close both legs together. Do not close this leg alone.",
+    "close_rule": "CLOSING TODAY via scheduler \u2014 spread at max loss.",
+    "added": "2026-04-28"
+  },
+  "NVDA260605P00195000": {
+    "type": "SPREAD",
+    "strategy": "Bull put spread \u2014 short leg",
+    "reason": "Income-generating short put. NVDA rose above $195 \u2014 loss trade.",
+    "exit_rule": "Close at max loss. Close both legs simultaneously.",
+    "close_rule": "CLOSING TODAY via scheduler \u2014 -$400 loss, accept and move on.",
+    "added": "2026-04-28"
+  },
+  "SPY260605P00650000": {
+    "type": "SPREAD",
+    "strategy": "Bull put spread \u2014 long leg",
+    "reason": "Protective long put leg. SPY above $685 \u2014 spread profitable.",
+    "exit_rule": "Close both legs together at 50% profit or at expiry.",
+    "close_rule": "Running fine. Let expire 5 June.",
+    "added": "2026-04-29"
+  },
+  "SPY260605P00685000": {
+    "type": "SPREAD",
+    "strategy": "Bull put spread \u2014 short leg",
+    "reason": "Income short put. SPY above $685 \u2014 position profitable.",
+    "exit_rule": "Close at 50% profit with long leg, or let expire worthless.",
+    "close_rule": "Running fine. Let expire 5 June.",
+    "added": "2026-04-29"
+  },
+  "NVDA_GTC": {
+    "type": "LIMIT",
+    "strategy": "NVDA limit buy at $194.19",
+    "reason": "CONFIDENT BUY. Waiting for pullback to strong support level.",
+    "exit_rule": "Cancel only if AK scan changes to AVOID.",
+    "close_rule": "Leave open GTC. Do not cancel.",
+    "added": "2026-04-28"
+  },
+  "MSFT260620P00400000": {
+    "type": "CSP",
+    "strategy": "MSFT cash secured put",
+    "reason": "Waiting for assignment at  \u2014 collecting  premium",
+    "exit_rule": "",
+    "close_rule": "",
+    "added": "2026-05-06"
+  }
+}

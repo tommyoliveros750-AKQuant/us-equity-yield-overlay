@@ -1,0 +1,371 @@
+[
+  {
+    "timestamp": "2026-04-24T08:03:44.209097",
+    "type": "EARNINGS_UPCOMING",
+    "symbol": "AAPL",
+    "severity": "INFO",
+    "message": "Earnings in 5 days (2026-04-30) | EPS estimate: $1.91",
+    "action": "Review before earnings: check if EPS growth expected. If yes: hold/add. If warning signs: consider reducing before report to avoid volatility.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T08:03:44.210609",
+    "type": "EARNINGS_UPCOMING",
+    "symbol": "MSFT",
+    "severity": "INFO",
+    "message": "Earnings in 4 days (2026-04-29) | EPS estimate: $4.07",
+    "action": "Review before earnings: check if EPS growth expected. If yes: hold/add. If warning signs: consider reducing before report to avoid volatility.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T08:03:44.214505",
+    "type": "EARNINGS_UPCOMING",
+    "symbol": "V",
+    "severity": "INFO",
+    "message": "Earnings in 3 days (2026-04-28) | EPS estimate: $3.09",
+    "action": "Review before earnings: check if EPS growth expected. If yes: hold/add. If warning signs: consider reducing before report to avoid volatility.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T08:03:49.775736",
+    "type": "WATCHLIST_APPROACHING",
+    "symbol": "AAPL",
+    "severity": "INFO",
+    "message": "Now $273.43 \u2014 19.9% below IV $341.19",
+    "action": "Approaching buy zone. Set alert for 20% below IV ($272.95). ak-scan AAPL",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T08:03:50.799705",
+    "type": "DIP_OPPORTUNITY",
+    "symbol": "MSFT",
+    "severity": "OPPORTUNITY",
+    "message": "Now $415.75 \u2014 21.7% below IV of $531.19. Previous: CONFIDENT BUY",
+    "action": "Deep value entry. Run full re-analysis to confirm fundamentals unchanged: ak-scan MSFT",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:12:35.385788",
+    "type": "TREND_WEAK",
+    "symbol": "MSFT",
+    "severity": "WARNING",
+    "message": "20EMA $402.83 below 150SMA $456.34 \u2014 trend weakening",
+    "action": "Monitor closely. Not yet exit signal but approaching. No new entries.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:12:35.410855",
+    "type": "BELOW_200MA",
+    "symbol": "MSFT",
+    "severity": "WARNING",
+    "message": "Price $422.58 is 10.1% below 200SMA $470.08",
+    "action": "Strong downtrend. AK rule: no new entries below 200SMA. Consider reducing position.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:12:37.723348",
+    "type": "TREND_WEAK",
+    "symbol": "V",
+    "severity": "WARNING",
+    "message": "20EMA $309.48 below 150SMA $329.24 \u2014 trend weakening",
+    "action": "Monitor closely. Not yet exit signal but approaching. No new entries.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:12:37.731088",
+    "type": "BELOW_200MA",
+    "symbol": "V",
+    "severity": "WARNING",
+    "message": "Price $309.21 is 7.3% below 200SMA $333.41",
+    "action": "Strong downtrend. AK rule: no new entries below 200SMA. Consider reducing position.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:12:40.102299",
+    "type": "EARNINGS_UPCOMING",
+    "symbol": "AAPL",
+    "severity": "INFO",
+    "message": "Earnings in 5 days (2026-04-30) | EPS estimate: $1.92",
+    "action": "Review before earnings: check if EPS growth expected. If yes: hold/add. If warning signs: consider reducing before report to avoid volatility.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:12:40.115076",
+    "type": "EARNINGS_UPCOMING",
+    "symbol": "MSFT",
+    "severity": "INFO",
+    "message": "Earnings in 4 days (2026-04-29) | EPS estimate: $4.07",
+    "action": "Review before earnings: check if EPS growth expected. If yes: hold/add. If warning signs: consider reducing before report to avoid volatility.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:12:40.124011",
+    "type": "EARNINGS_UPCOMING",
+    "symbol": "V",
+    "severity": "INFO",
+    "message": "Earnings in 3 days (2026-04-28) | EPS estimate: $3.09",
+    "action": "Review before earnings: check if EPS growth expected. If yes: hold/add. If warning signs: consider reducing before report to avoid volatility.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:12:46.664049",
+    "type": "DIP_OPPORTUNITY",
+    "symbol": "AAPL",
+    "severity": "OPPORTUNITY",
+    "message": "Now $270.27 \u2014 20.8% below IV of $341.19. Previous: CONFIDENT BUY",
+    "action": "Deep value entry. Run full re-analysis to confirm fundamentals unchanged: ak-scan AAPL",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:12:47.961747",
+    "type": "DIP_OPPORTUNITY",
+    "symbol": "MSFT",
+    "severity": "OPPORTUNITY",
+    "message": "Now $423.77 \u2014 20.2% below IV of $531.19. Previous: CONFIDENT BUY",
+    "action": "Deep value entry. Run full re-analysis to confirm fundamentals unchanged: ak-scan MSFT",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:28:23.632076",
+    "type": "TREND_WEAK",
+    "symbol": "MSFT",
+    "severity": "WARNING",
+    "message": "20EMA $402.97 below 150SMA $456.35 \u2014 trend weakening",
+    "action": "Monitor closely. Not yet exit signal but approaching. No new entries.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:28:23.653449",
+    "type": "BELOW_200MA",
+    "symbol": "MSFT",
+    "severity": "WARNING",
+    "message": "Price $424.04 is 9.8% below 200SMA $470.09",
+    "action": "Strong downtrend. AK rule: no new entries below 200SMA. Consider reducing position.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:28:25.905478",
+    "type": "TREND_WEAK",
+    "symbol": "V",
+    "severity": "WARNING",
+    "message": "20EMA $309.46 below 150SMA $329.23 \u2014 trend weakening",
+    "action": "Monitor closely. Not yet exit signal but approaching. No new entries.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:28:25.919265",
+    "type": "BELOW_200MA",
+    "symbol": "V",
+    "severity": "WARNING",
+    "message": "Price $308.97 is 7.3% below 200SMA $333.40",
+    "action": "Strong downtrend. AK rule: no new entries below 200SMA. Consider reducing position.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:28:28.187426",
+    "type": "EARNINGS_UPCOMING",
+    "symbol": "AAPL",
+    "severity": "INFO",
+    "message": "Earnings in 5 days (2026-04-30) | EPS estimate: $1.92",
+    "action": "Review before earnings: check if EPS growth expected. If yes: hold/add. If warning signs: consider reducing before report to avoid volatility.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:28:28.196528",
+    "type": "EARNINGS_UPCOMING",
+    "symbol": "MSFT",
+    "severity": "INFO",
+    "message": "Earnings in 4 days (2026-04-29) | EPS estimate: $4.07",
+    "action": "Review before earnings: check if EPS growth expected. If yes: hold/add. If warning signs: consider reducing before report to avoid volatility.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:28:28.210234",
+    "type": "EARNINGS_UPCOMING",
+    "symbol": "V",
+    "severity": "INFO",
+    "message": "Earnings in 3 days (2026-04-28) | EPS estimate: $3.09",
+    "action": "Review before earnings: check if EPS growth expected. If yes: hold/add. If warning signs: consider reducing before report to avoid volatility.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:28:35.133372",
+    "type": "DIP_OPPORTUNITY",
+    "symbol": "AAPL",
+    "severity": "OPPORTUNITY",
+    "message": "Now $269.99 \u2014 20.9% below IV of $341.19. Previous: CONFIDENT BUY",
+    "action": "Deep value entry. Run full re-analysis to confirm fundamentals unchanged: ak-scan AAPL",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:28:36.335974",
+    "type": "DIP_OPPORTUNITY",
+    "symbol": "MSFT",
+    "severity": "OPPORTUNITY",
+    "message": "Now $423.56 \u2014 20.3% below IV of $531.19. Previous: CONFIDENT BUY",
+    "action": "Deep value entry. Run full re-analysis to confirm fundamentals unchanged: ak-scan MSFT",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:42:52.989908",
+    "type": "TREND_WEAK",
+    "symbol": "MSFT",
+    "severity": "WARNING",
+    "message": "20EMA $402.95 below 150SMA $456.35 \u2014 trend weakening",
+    "action": "Monitor closely. Not yet exit signal but approaching. No new entries.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:42:53.009945",
+    "type": "BELOW_200MA",
+    "symbol": "MSFT",
+    "severity": "WARNING",
+    "message": "Price $423.86 is 9.8% below 200SMA $470.09",
+    "action": "Strong downtrend. AK rule: no new entries below 200SMA. Consider reducing position.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:42:55.256213",
+    "type": "TREND_WEAK",
+    "symbol": "V",
+    "severity": "WARNING",
+    "message": "20EMA $309.44 below 150SMA $329.23 \u2014 trend weakening",
+    "action": "Monitor closely. Not yet exit signal but approaching. No new entries.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:42:55.275622",
+    "type": "BELOW_200MA",
+    "symbol": "V",
+    "severity": "WARNING",
+    "message": "Price $308.75 is 7.4% below 200SMA $333.40",
+    "action": "Strong downtrend. AK rule: no new entries below 200SMA. Consider reducing position.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:42:57.532024",
+    "type": "EARNINGS_UPCOMING",
+    "symbol": "AAPL",
+    "severity": "INFO",
+    "message": "Earnings in 5 days (2026-04-30) | EPS estimate: $1.92",
+    "action": "Review before earnings: check if EPS growth expected. If yes: hold/add. If warning signs: consider reducing before report to avoid volatility.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:42:57.550209",
+    "type": "EARNINGS_UPCOMING",
+    "symbol": "MSFT",
+    "severity": "INFO",
+    "message": "Earnings in 4 days (2026-04-29) | EPS estimate: $4.07",
+    "action": "Review before earnings: check if EPS growth expected. If yes: hold/add. If warning signs: consider reducing before report to avoid volatility.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:42:57.562409",
+    "type": "EARNINGS_UPCOMING",
+    "symbol": "V",
+    "severity": "INFO",
+    "message": "Earnings in 3 days (2026-04-28) | EPS estimate: $3.09",
+    "action": "Review before earnings: check if EPS growth expected. If yes: hold/add. If warning signs: consider reducing before report to avoid volatility.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:43:04.027510",
+    "type": "DIP_OPPORTUNITY",
+    "symbol": "AAPL",
+    "severity": "OPPORTUNITY",
+    "message": "Now $270.39 \u2014 20.8% below IV of $341.19. Previous: CONFIDENT BUY",
+    "action": "Deep value entry. Run full re-analysis to confirm fundamentals unchanged: ak-scan AAPL",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:43:05.255829",
+    "type": "DIP_OPPORTUNITY",
+    "symbol": "MSFT",
+    "severity": "OPPORTUNITY",
+    "message": "Now $424.11 \u2014 20.2% below IV of $531.19. Previous: CONFIDENT BUY",
+    "action": "Deep value entry. Run full re-analysis to confirm fundamentals unchanged: ak-scan MSFT",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:58:41.701731",
+    "type": "TREND_WEAK",
+    "symbol": "MSFT",
+    "severity": "WARNING",
+    "message": "20EMA $402.99 below 150SMA $456.35 \u2014 trend weakening",
+    "action": "Monitor closely. Not yet exit signal but approaching. No new entries.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:58:41.734988",
+    "type": "BELOW_200MA",
+    "symbol": "MSFT",
+    "severity": "WARNING",
+    "message": "Price $424.26 is 9.7% below 200SMA $470.09",
+    "action": "Strong downtrend. AK rule: no new entries below 200SMA. Consider reducing position.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:58:43.919255",
+    "type": "TREND_WEAK",
+    "symbol": "V",
+    "severity": "WARNING",
+    "message": "20EMA $309.44 below 150SMA $329.23 \u2014 trend weakening",
+    "action": "Monitor closely. Not yet exit signal but approaching. No new entries.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:58:43.932716",
+    "type": "BELOW_200MA",
+    "symbol": "V",
+    "severity": "WARNING",
+    "message": "Price $308.75 is 7.4% below 200SMA $333.40",
+    "action": "Strong downtrend. AK rule: no new entries below 200SMA. Consider reducing position.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:58:46.194427",
+    "type": "EARNINGS_UPCOMING",
+    "symbol": "AAPL",
+    "severity": "INFO",
+    "message": "Earnings in 5 days (2026-04-30) | EPS estimate: $1.92",
+    "action": "Review before earnings: check if EPS growth expected. If yes: hold/add. If warning signs: consider reducing before report to avoid volatility.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:58:46.217507",
+    "type": "EARNINGS_UPCOMING",
+    "symbol": "MSFT",
+    "severity": "INFO",
+    "message": "Earnings in 4 days (2026-04-29) | EPS estimate: $4.07",
+    "action": "Review before earnings: check if EPS growth expected. If yes: hold/add. If warning signs: consider reducing before report to avoid volatility.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:58:46.237983",
+    "type": "EARNINGS_UPCOMING",
+    "symbol": "V",
+    "severity": "INFO",
+    "message": "Earnings in 3 days (2026-04-28) | EPS estimate: $3.09",
+    "action": "Review before earnings: check if EPS growth expected. If yes: hold/add. If warning signs: consider reducing before report to avoid volatility.",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:58:52.697972",
+    "type": "DIP_OPPORTUNITY",
+    "symbol": "AAPL",
+    "severity": "OPPORTUNITY",
+    "message": "Now $271.13 \u2014 20.5% below IV of $341.19. Previous: CONFIDENT BUY",
+    "action": "Deep value entry. Run full re-analysis to confirm fundamentals unchanged: ak-scan AAPL",
+    "reviewed": false
+  },
+  {
+    "timestamp": "2026-04-24T20:58:53.927610",
+    "type": "DIP_OPPORTUNITY",
+    "symbol": "MSFT",
+    "severity": "OPPORTUNITY",
+    "message": "Now $424.54 \u2014 20.1% below IV of $531.19. Previous: CONFIDENT BUY",
+    "action": "Deep value entry. Run full re-analysis to confirm fundamentals unchanged: ak-scan MSFT",
+    "reviewed": false
+  }
+]

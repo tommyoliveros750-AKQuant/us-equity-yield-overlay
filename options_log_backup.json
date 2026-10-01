@@ -1,0 +1,354 @@
+[
+  {
+    "date": "2026-04-22",
+    "strategy": "VERIFIED_FILLS",
+    "ticker": "MULTIPLE",
+    "description": "Verified Alpaca fills: MSFT260529P00400000, AAPL260529P00250000",
+    "total_income": 1055.0,
+    "fills": [
+      {
+        "date": "2026-04-22",
+        "symbol": "MSFT260529P00400000",
+        "side": "sell",
+        "qty": 1,
+        "price": 7.55,
+        "pnl": 755.0,
+        "order_id": "8d9c680e-21e4-4f"
+      },
+      {
+        "date": "2026-04-22",
+        "symbol": "AAPL260529P00250000",
+        "side": "sell",
+        "qty": 1,
+        "price": 3.0,
+        "pnl": 300.0,
+        "order_id": "b3537322-6e86-41"
+      }
+    ],
+    "note": "Reconciled against actual Alpaca fill records \u2014 verified true figure"
+  },
+  {
+    "date": "2026-04-23",
+    "strategy": "VERIFIED_FILLS",
+    "ticker": "MULTIPLE",
+    "description": "Verified Alpaca fills: MSFT260529P00400000",
+    "total_income": -2155.0,
+    "fills": [
+      {
+        "date": "2026-04-23",
+        "symbol": "MSFT260529P00400000",
+        "side": "buy",
+        "qty": 1,
+        "price": 10.65,
+        "pnl": -1065.0,
+        "order_id": "533bf5e8-b594-42"
+      },
+      {
+        "date": "2026-04-23",
+        "symbol": "MSFT260529P00400000",
+        "side": "buy",
+        "qty": 1,
+        "price": 10.9,
+        "pnl": -1090.0,
+        "order_id": "e31e3d17-6531-48"
+      }
+    ],
+    "note": "Reconciled against actual Alpaca fill records \u2014 verified true figure"
+  },
+  {
+    "date": "2026-04-27",
+    "strategy": "VERIFIED_FILLS",
+    "ticker": "MULTIPLE",
+    "description": "Verified Alpaca fills: V260605C00325000",
+    "total_income": 420.0,
+    "fills": [
+      {
+        "date": "2026-04-27",
+        "symbol": "V260605C00325000",
+        "side": "sell",
+        "qty": 1,
+        "price": 4.2,
+        "pnl": 420.0,
+        "order_id": "66a52442-999f-43"
+      }
+    ],
+    "note": "Reconciled against actual Alpaca fill records \u2014 verified true figure"
+  },
+  {
+    "date": "2026-04-28",
+    "strategy": "VERIFIED_FILLS",
+    "ticker": "MULTIPLE",
+    "description": "Verified Alpaca fills: AAPL260605C00285000, MSFT260529P00400000",
+    "total_income": 1265.0,
+    "fills": [
+      {
+        "date": "2026-04-28",
+        "symbol": "MSFT260529P00400000",
+        "side": "sell",
+        "qty": 1,
+        "price": 8.3,
+        "pnl": 830.0,
+        "order_id": "7f2a4a1d-c44f-4f"
+      },
+      {
+        "date": "2026-04-28",
+        "symbol": "AAPL260605C00285000",
+        "side": "sell",
+        "qty": 1,
+        "price": 4.35,
+        "pnl": 435.0,
+        "order_id": "f79cd2f8-9954-4e"
+      }
+    ],
+    "note": "Reconciled against actual Alpaca fill records \u2014 verified true figure"
+  },
+  {
+    "date": "2026-04-29",
+    "strategy": "VERIFIED_FILLS",
+    "ticker": "MULTIPLE",
+    "description": "Verified Alpaca fills: V260605C00325000",
+    "total_income": -4020.0,
+    "fills": [
+      {
+        "date": "2026-04-29",
+        "symbol": "V260605C00325000",
+        "side": "buy",
+        "qty": 1,
+        "price": 20.1,
+        "pnl": -2010.0,
+        "order_id": "639a72b2-32c8-4b"
+      },
+      {
+        "date": "2026-04-29",
+        "symbol": "V260605C00325000",
+        "side": "buy",
+        "qty": 1,
+        "price": 20.1,
+        "pnl": -2010.0,
+        "order_id": "c54a4206-275c-47"
+      }
+    ],
+    "note": "Reconciled against actual Alpaca fill records \u2014 verified true figure"
+  },
+  {
+    "date": "2026-05-01",
+    "strategy": "VERIFIED_FILLS",
+    "ticker": "MULTIPLE",
+    "description": "Verified Alpaca fills: AAPL260605C00285000, AAPL260605C00295000, V260605C00325000",
+    "total_income": 680.0,
+    "fills": [
+      {
+        "date": "2026-05-01",
+        "symbol": "AAPL260605C00295000",
+        "side": "sell",
+        "qty": 1,
+        "price": 4.0,
+        "pnl": 400.0,
+        "order_id": "b2ebde7c-7e55-47"
+      },
+      {
+        "date": "2026-05-01",
+        "symbol": "AAPL260605C00285000",
+        "side": "buy",
+        "qty": 1,
+        "price": 8.75,
+        "pnl": -875.0,
+        "order_id": "21c8bc02-8404-4b"
+      },
+      {
+        "date": "2026-05-01",
+        "symbol": "V260605C00325000",
+        "side": "sell",
+        "qty": 1,
+        "price": 11.55,
+        "pnl": 1155.0,
+        "order_id": "cec2d767-40a4-43"
+      }
+    ],
+    "note": "Reconciled against actual Alpaca fill records \u2014 verified true figure"
+  },
+  {
+    "date": "2026-05-06",
+    "strategy": "VERIFIED_FILLS",
+    "ticker": "MULTIPLE",
+    "description": "Verified Alpaca fills: NVDA260605P00175000, NVDA260605P00195000",
+    "total_income": -606.0,
+    "fills": [
+      {
+        "date": "2026-05-06",
+        "symbol": "NVDA260605P00175000",
+        "side": "sell",
+        "qty": 1,
+        "price": 2.14,
+        "pnl": 214.0,
+        "order_id": "366536d2-ec42-41"
+      },
+      {
+        "date": "2026-05-06",
+        "symbol": "NVDA260605P00195000",
+        "side": "buy",
+        "qty": 1,
+        "price": 8.2,
+        "pnl": -820.0,
+        "order_id": "a9f95985-a424-49"
+      }
+    ],
+    "note": "Reconciled against actual Alpaca fill records \u2014 verified true figure"
+  },
+  {
+    "date": "2026-05-08",
+    "strategy": "VERIFIED_FILLS",
+    "ticker": "MULTIPLE",
+    "description": "Verified Alpaca fills: SPY260612P00690000, SPY260612P00700000",
+    "total_income": -756.0,
+    "fills": [
+      {
+        "date": "2026-05-08",
+        "symbol": "SPY260612P00700000",
+        "side": "buy",
+        "qty": 1,
+        "price": 4.3,
+        "pnl": -430.0,
+        "order_id": "f14e5313-e332-43"
+      },
+      {
+        "date": "2026-05-08",
+        "symbol": "SPY260612P00690000",
+        "side": "buy",
+        "qty": 1,
+        "price": 3.26,
+        "pnl": -326.0,
+        "order_id": "dcef9a78-ca69-41"
+      }
+    ],
+    "note": "Reconciled against actual Alpaca fill records \u2014 verified true figure"
+  },
+  {
+    "date": "2026-05-11",
+    "strategy": "VERIFIED_FILLS",
+    "ticker": "MULTIPLE",
+    "description": "Verified Alpaca fills: AAPL260605C00295000, SPY260612P00660000, SPY260612P00655000",
+    "total_income": -314.0,
+    "fills": [
+      {
+        "date": "2026-05-11",
+        "symbol": "SPY260612P00660000",
+        "side": "sell",
+        "qty": 1,
+        "price": 1.42,
+        "pnl": 142.0,
+        "order_id": "832f269b-ecaa-48"
+      },
+      {
+        "date": "2026-05-11",
+        "symbol": "SPY260612P00655000",
+        "side": "sell",
+        "qty": 1,
+        "price": 1.29,
+        "pnl": 129.0,
+        "order_id": "9e232ac5-2c7b-47"
+      },
+      {
+        "date": "2026-05-11",
+        "symbol": "AAPL260605C00295000",
+        "side": "buy",
+        "qty": 1,
+        "price": 5.85,
+        "pnl": -585.0,
+        "order_id": "f415ef2b-3670-4b"
+      }
+    ],
+    "note": "Reconciled against actual Alpaca fill records \u2014 verified true figure"
+  },
+  {
+    "date": "2026-05-12",
+    "strategy": "VERIFIED_FILLS",
+    "ticker": "MULTIPLE",
+    "description": "Verified Alpaca fills: AAPL260529P00250000",
+    "total_income": -34.0,
+    "fills": [
+      {
+        "date": "2026-05-12",
+        "symbol": "AAPL260529P00250000",
+        "side": "buy",
+        "qty": 1,
+        "price": 0.34,
+        "pnl": -34.0,
+        "order_id": "7ff4efd8-37b7-4d"
+      }
+    ],
+    "note": "Reconciled against actual Alpaca fill records \u2014 verified true figure"
+  },
+  {
+    "date": "2026-05-13",
+    "strategy": "VERIFIED_FILLS",
+    "ticker": "MULTIPLE",
+    "description": "Verified Alpaca fills: MSFT260612P00370000",
+    "total_income": -33.0,
+    "fills": [
+      {
+        "date": "2026-05-13",
+        "symbol": "MSFT260612P00370000",
+        "side": "sell",
+        "qty": 1,
+        "price": 2.82,
+        "pnl": 282.0,
+        "order_id": "616fdb78-43d2-46"
+      },
+      {
+        "date": "2026-05-13",
+        "symbol": "MSFT260612P00370000",
+        "side": "buy",
+        "qty": 1,
+        "price": 3.15,
+        "pnl": -315.0,
+        "order_id": "6d20b254-1d52-4c"
+      }
+    ],
+    "note": "Reconciled against actual Alpaca fill records \u2014 verified true figure"
+  },
+  {
+    "date": "2026-05-15",
+    "strategy": "VERIFIED_FILLS",
+    "ticker": "MULTIPLE",
+    "description": "Verified Alpaca fills: SPY260605P00685000, SPY260612P00685000",
+    "total_income": -354.0,
+    "fills": [
+      {
+        "date": "2026-05-15",
+        "symbol": "SPY260612P00685000",
+        "side": "buy",
+        "qty": 1,
+        "price": 2.17,
+        "pnl": -217.0,
+        "order_id": "e7fe2ac1-519d-40"
+      },
+      {
+        "date": "2026-05-15",
+        "symbol": "SPY260605P00685000",
+        "side": "buy",
+        "qty": 1,
+        "price": 1.37,
+        "pnl": -137.0,
+        "order_id": "5ff22a36-0da5-4c"
+      }
+    ],
+    "note": "Reconciled against actual Alpaca fill records \u2014 verified true figure"
+  },
+  {
+    "date": "2026-05-18",
+    "strategy": "DIVIDEND_PAPER_CREDIT",
+    "ticker": "MULTIPLE",
+    "description": "Dividend income not credited by Alpaca paper \u2014 manual credit",
+    "total_income": 25.0,
+    "note": "Paper simulation \u2014 real account would have received this"
+  },
+  {
+    "date": "2026-05-20",
+    "strategy": "DIVIDEND_PAPER_CREDIT",
+    "ticker": "MULTIPLE",
+    "description": "Dividend income not credited by Alpaca paper \u2014 manual credit",
+    "total_income": 25.0,
+    "note": "Paper simulation \u2014 real account would have received this"
+  }
+]

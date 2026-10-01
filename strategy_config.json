@@ -1,0 +1,7 @@
+{
+  "spy_spreads_enabled": false,
+  "spy_spreads_disabled_reason": "Cash optimisation \u2014 Oct 2026. Re-enable when cash consistently above 5%.",
+  "spy_spreads_disabled_date": "2026-09-04",
+  "cc_only_mode": true,
+  "notes": "Set spy_spreads_enabled to true to re-enable. Run ak-options after changing."
+}

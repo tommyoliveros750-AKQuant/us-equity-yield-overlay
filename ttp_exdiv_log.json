@@ -1,0 +1,44 @@
+{
+  "date": "2026-05-18",
+  "critical_count": 0,
+  "upcoming_count": 2,
+  "warnings": [
+    {
+      "ticker": "JNJ",
+      "ex_date": "2026-05-27",
+      "pay_date": "2026-06-10",
+      "amount": 1.24,
+      "days_away": 8,
+      "level": "UPCOMING",
+      "icon": "\ud83d\udd35",
+      "urgency": "Monitor \u2014 no action yet",
+      "held": false,
+      "shares": 0,
+      "cc_symbol": "",
+      "cc_qty": 0,
+      "total_div": 0
+    },
+    {
+      "ticker": "O",
+      "ex_date": "2026-05-28",
+      "pay_date": "2026-06-13",
+      "amount": 0.2635,
+      "days_away": 9,
+      "level": "UPCOMING",
+      "icon": "\ud83d\udd35",
+      "urgency": "Monitor \u2014 no action yet",
+      "held": false,
+      "shares": 0,
+      "cc_symbol": "",
+      "cc_qty": 0,
+      "total_div": 0
+    }
+  ],
+  "positions_held": [
+    "AAPL",
+    "MSFT",
+    "SCHD",
+    "V",
+    "VICI"
+  ]
+}

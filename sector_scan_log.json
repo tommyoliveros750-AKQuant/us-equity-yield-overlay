@@ -1,0 +1,68 @@
+[
+  {
+    "date": "2026-04-27",
+    "timestamp": "2026-04-27T07:45:53.915680",
+    "sector": "ai",
+    "results": [
+      {
+        "ticker": "NVDA",
+        "metrics": {
+          "ticker": "NVDA",
+          "price": 208.26,
+          "pe": "N/A",
+          "eps": 0.0,
+          "mkt_cap_b": 5061.8,
+          "ytd": 0.0,
+          "change_pct": 0.0,
+          "score": 1,
+          "verdict": "SKIP",
+          "profitable": false,
+          "liquid": false
+        },
+        "ai_verdict": "INVESTIGATE",
+        "ai_reason": "NVIDIA has a strong market position and competitive advantage in the graphics processing and artificial intelligence industries.",
+        "ai_moat": "Brand/Regulatory"
+      },
+      {
+        "ticker": "AMD",
+        "metrics": {
+          "ticker": "AMD",
+          "price": 347.8,
+          "pe": "N/A",
+          "eps": 0.0,
+          "mkt_cap_b": 567.1,
+          "ytd": 0.0,
+          "change_pct": 0.0,
+          "score": 1,
+          "verdict": "SKIP",
+          "profitable": false,
+          "liquid": false
+        },
+        "ai_verdict": "INVESTIGATE",
+        "ai_reason": "The company's market capitalization and industry position suggest potential quality and growth.",
+        "ai_moat": "Brand"
+      },
+      {
+        "ticker": "TSM",
+        "metrics": {
+          "ticker": "TSM",
+          "price": 402.46,
+          "pe": "N/A",
+          "eps": 0.0,
+          "mkt_cap_b": 2087.4,
+          "ytd": 0.0,
+          "change_pct": 0.0,
+          "score": 1,
+          "verdict": "SKIP",
+          "profitable": false,
+          "liquid": false
+        },
+        "ai_verdict": "INVESTIGATE",
+        "ai_reason": "The company's massive market cap suggests a potentially stable business, but further analysis is needed to confirm its moat and growth prospects.",
+        "ai_moat": "None"
+      }
+    ],
+    "investigate": [],
+    "watchlist": []
+  }
+]

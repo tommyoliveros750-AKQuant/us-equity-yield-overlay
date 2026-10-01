@@ -1,0 +1,24 @@
+{
+  "date": "2026-09-30T09:00:04.591701",
+  "portfolio_value": 106844.79,
+  "cash": -78.35,
+  "cash_pct": -0.1,
+  "positions": 8,
+  "danger_score": 10,
+  "danger_level": "LOW \u2014 NORMAL CONDITIONS",
+  "beta": 1.06,
+  "signals": [
+    {
+      "severity": "MEDIUM",
+      "message": "Volume 50%+ above average \u2014 institutional activity elevated"
+    }
+  ],
+  "recommendations": [
+    {
+      "action": "NO HEDGE NEEDED",
+      "priority": "INFO",
+      "detail": "Market conditions healthy. Stay fully invested. Sell covered calls for income.",
+      "cost": 0
+    }
+  ]
+}
