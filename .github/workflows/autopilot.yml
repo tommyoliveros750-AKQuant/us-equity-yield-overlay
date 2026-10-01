@@ -2,8 +2,9 @@ name: AK-System Autonomous Cloud Autopilot
 
 on:
   schedule:
+    # Triggers dynamically every Monday through Friday at 21:05 UK Time (20:05 UTC)
     - cron: '5 20 * * 1-5'
-  workflow_dispatch:
+  workflow_dispatch: # Allows manual trigger if ever needed
 
 jobs:
   run-autonomous-engine:
@@ -26,6 +27,9 @@ jobs:
         env:
           MY_LIVE_LTD_KEY: ${{ secrets.MY_LIVE_LTD_KEY }}
           MY_LIVE_LTD_SECRET: ${{ secrets.MY_LIVE_LTD_SECRET }}
+          ALPACA_API_KEY_ID: ${{ secrets.MY_LIVE_LTD_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.MY_LIVE_LTD_SECRET }}
+          ALPACA_API_BASE_URL: 'https://alpaca.markets'
           CLIENT1_ACTIVE: "true"
           CLIENT1_STATUS: "ACTIVE"
           RISK_OVERRIDE_VICI: "LIFTED"
