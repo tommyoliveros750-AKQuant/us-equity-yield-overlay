@@ -27,5 +27,6 @@ jobs:
           RISK_OVERRIDE_VICI: "LIFTED"
           SYSTEM_STATUS_FORCE: "RESUME"
         run: |
+          cd adam_khoo_system
           python daily_routine.py --auto-close
           python ak_subscriber_broadcast.py --execute-pending
