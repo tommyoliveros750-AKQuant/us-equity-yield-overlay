@@ -1,0 +1,31 @@
+name: AK-System Autonomous Cloud Autopilot
+
+on:
+  schedule:
+    # Triggers dynamically every Monday through Friday at 21:05 UK Time (20:05 UTC)
+    - cron: '5 20 * * 1-5'
+  workflow_dispatch: # Allows manual trigger if ever needed
+
+jobs:
+  run-autonomous-engine:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Secure Repository Wires
+        uses: actions/checkout@v3
+
+      - name: Initialize Isolated Python Environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Execute Cloud Closing Multi-Account Sweep
+        env:
+          MY_LIVE_LTD_KEY: ${{ secrets.MY_LIVE_LTD_KEY }}
+          MY_LIVE_LTD_SECRET: ${{ secrets.MY_LIVE_LTD_SECRET }}
+          CLIENT1_ACTIVE: "true"
+          CLIENT1_STATUS: "ACTIVE"
+          RISK_OVERRIDE_VICI: "LIFTED"
+          SYSTEM_STATUS_FORCE: "RESUME"
+        run: |
+          python daily_routine.py --auto-close
+          python ak_subscriber_broadcast.py --execute-pending
