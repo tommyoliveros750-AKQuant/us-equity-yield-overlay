@@ -2,9 +2,8 @@ name: AK-System Autonomous Cloud Autopilot
 
 on:
   schedule:
-    # Triggers dynamically every Monday through Friday at 21:05 UK Time (20:05 UTC)
     - cron: '5 20 * * 1-5'
-  workflow_dispatch: # Allows manual trigger if ever needed
+  workflow_dispatch:
 
 jobs:
   run-autonomous-engine:
