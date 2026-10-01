@@ -18,6 +18,11 @@ jobs:
         with:
           python-version: '3.10'
 
+      - name: Install System Package Dependencies
+        run: |
+          pip install --upgrade pip
+          pip install pandas numpy alpaca-trade-api urllib3 requests
+
       - name: Execute Cloud Closing Multi-Account Sweep
         env:
           MY_LIVE_LTD_KEY: ${{ secrets.MY_LIVE_LTD_KEY }}
