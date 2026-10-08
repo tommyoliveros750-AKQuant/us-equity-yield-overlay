@@ -82,7 +82,7 @@ via Alpaca API integration. Fee structure based on NAV tier.
 
 UK Limited Company — VAT registered — HMRC compliant
 
-**Contact:** Available via GitHub Issues for initial enquiry
+**Contact:** ak.quantsystem@proton.me
 
 ---
 
