@@ -35,17 +35,16 @@ Adam Khoo Whale Investor methodology on US markets.
 **Income Layer:** Monthly covered call premium collection
 on all eligible held positions — target 1-3% per month
 
-**Risk Management:** 5-rule exit system
-- Rule 1: 20EMA crosses below 150SMA (primary exit)
-- Rule 2: Death cross — 50SMA below 200SMA
-- Rule 3: Price below 200SMA structural floor
-- Rule 4: Downtrend structure confirmed
-- Rule 5: Position -15% from entry (review trigger)
+**Risk Management:** Proprietary multi-rule exit framework
+- Technical and fundamental criteria evaluated daily
+- Exits are non-negotiable when rules trigger
+- Demonstrated in action: VICI exited October 2026 when 
+  multiple rules triggered simultaneously
 
-**Capital Protection:** Black swan gates
-- VIX > 40 freezes all new entries
-- Pre-market gap > 5% skips ticker
-- Autonomous timeout disconnect on API failure
+**Capital Protection:** Autonomous black swan protection
+- Volatility-based circuit breakers active at all times
+- Pre-market gap detection prevents adverse entries
+- Network failure safeguards with automatic standdown
 
 ---
 
