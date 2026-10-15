@@ -52,13 +52,13 @@ on all eligible held positions — target 1-3% per month
 
 | Stock | Entry | Return | Status |
 |-------|-------|--------|--------|
-| AAPL | $268.34 | +25.6% | Active — CC running |
-| MSFT | $425.03 | +24.8% | Active — new high |
-| V | $309.50 | +20.8% | Active — CC running |
-| SCHD | $31.43 | +4.1% | Active — dividend income |
-| VICI | $29.04 | -20.6% | EXITED — 4 rules violated |
+| Stock 1 | $268.34 | +25.6% | Active — CC running |
+| Stock 2 | $425.03 | +24.8% | Active — new high |
+| Stock 3 | $309.50 | +20.8% | Active — CC running |
+| Stock 4 | $31.43 | +4.1% | Active — dividend income |
+| Stock 5 | $29.04 | -20.6% | EXITED — 4 rules violated |
 
-VICI was exited on 6 October 2026 when Rules 1, 2, 3 and 4 
+Stock 5 was exited on 6 October 2026 when Rules 1, 2, 3 and 4 
 triggered simultaneously. This demonstrates the system's 
 rules-based discipline — exits are non-negotiable.
 
