@@ -38,7 +38,7 @@ on all eligible held positions — target 1-3% per month
 **Risk Management:** Proprietary multi-rule exit framework
 - Technical and fundamental criteria evaluated daily
 - Exits are non-negotiable when rules trigger
-- Demonstrated in action: VICI exited October 2026 when 
+- Demonstrated in action: Stock 5 exited October 2026 when 
   multiple rules triggered simultaneously
 
 **Capital Protection:** Autonomous black swan protection
