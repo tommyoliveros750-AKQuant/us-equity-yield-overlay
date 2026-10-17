@@ -10,10 +10,10 @@ Adam Khoo Whale Investor methodology on US markets.
 
 | Metric | Value |
 |--------|-------|
-| Track Record | 107 trading days (24 Apr – 8 Oct 2026) |
+| Track Record | 113 trading days (24 Apr – 17 Oct 2026) |
 | Starting Capital | $100,000 |
-| Current NAV | $108,344 |
-| Verified Return | +8.34% |
+| Current NAV | $112,371 |
+| Verified Return | +12.37% |
 | Peak NAV | $115,223 |
 | Maximum Drawdown | 7.77% |
 | Strategy | Quality Equities + Covered Call Income |
