@@ -14,10 +14,10 @@ Clients retain full custody at all times.
 
 | Metric | Value |
 |--------|-------|
-| As of | 27 October 2026 |
+| As of | 28 October 2026 |
 | Starting capital | $100,000 |
-| Current NAV | $112,780.81 |
-| Verified return | +12.78% |
+| Current NAV | $112,955.65 |
+| Verified return | +12.96% |
 | Peak NAV | $113,814.07 |
 | Maximum drawdown (full ledger path) | 6.32% |
 | Strategy | Quality equities + covered-call income |
