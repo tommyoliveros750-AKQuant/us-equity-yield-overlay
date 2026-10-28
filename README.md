@@ -21,6 +21,12 @@ Adam Khoo Whale Investor methodology on US markets.
 
 ---
 
+
+> **Note on track record periods:**
+> Phase 1 (Apr–Aug 2026): System development — guards not yet active. Max drawdown 6.32%.
+> Phase 2 (Sep–Oct 2026): Full guard system active. Max drawdown <2%. All exits rules-based.
+> The improvement reflects the guard system working as designed.
+
 ## Strategy Overview
 
 **Stock Selection:** 7-criterion AK fundamental scan
