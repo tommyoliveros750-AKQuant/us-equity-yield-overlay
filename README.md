@@ -1,8 +1,12 @@
 # AK Equity Income System
-## Verified 107-Day Automated Trading Track Record
+## Verified Public Track Record
 
-A systematic, rules-based equity income system implementing the 
-Adam Khoo Whale Investor methodology on US markets.
+A systematic, rules-based equity income system on US markets:
+quality equities + covered-call income overlay.
+
+Operated for B2B licensing by **LURAVA LTD** (Company No. 16411816).
+Signals are delivered non-custodially into the client’s own brokerage account.
+Clients retain full custody at all times.
 
 ---
 
@@ -10,63 +14,67 @@ Adam Khoo Whale Investor methodology on US markets.
 
 | Metric | Value |
 |--------|-------|
-| Track Record | 118 trading days (24 Apr – 17 Oct 2026) |
-| Starting Capital | $100,000 |
-| Current NAV | $113,892 |
-| Verified Return | +13.89% |
-| Peak NAV | $115,223 |
-| Maximum Drawdown | 7.77% |
-| Strategy | Quality Equities + Covered Call Income |
-| Automation | 24/7 autonomous — 19 days proven unattended |
+| As of | 27 October 2026 |
+| Starting capital | $100,000 |
+| Current NAV | $112,780.81 |
+| Verified return | +12.78% |
+| Peak NAV | $113,814.07 |
+| Maximum drawdown (full ledger path) | 6.32% |
+| Strategy | Quality equities + covered-call income |
+
+**Track record phases**
+
+| Phase | Period | Max drawdown (ledger path) |
+|-------|--------|----------------------------|
+| Phase 1 — development | Apr–Aug 2026 | 6.32% (guards still being completed) |
+| Phase 2 — full guards | Sep–Oct 2026 | 2.61% |
+
+Phase 2 is the period with the full risk-guard and exit framework active.
+
+> A small number of ledger rows showed NAV reset to starting capital; those rows were excluded from peak and drawdown path calculation. The full daily CSV remains public for inspection.
+
+Illustrative annualised rate of the period: about 26% (context only — not a forecast).
 
 ---
-
-
-> **Note on track record periods:**
-> Phase 1 (Apr–Aug 2026): System development — guards not yet active. Max drawdown 6.32%.
-> Phase 2 (Sep–Oct 2026): Full guard system active. Max drawdown <2%. All exits rules-based.
-> The improvement reflects the guard system working as designed.
 
 ## Strategy Overview
 
-**Stock Selection:** 7-criterion AK fundamental scan
-- Earnings growth > 10% YoY
-- Revenue growth > 10% YoY  
-- Net profit margin positive and expanding
-- Return on equity > 15%
-- Price above 200-day SMA
-- Sector leadership confirmed
-- Economic cycle phase appropriate
+**Stock selection — rules-based scan (illustrative criteria)**  
+- Earnings growth and revenue growth thresholds  
+- Profitability and return-on-equity filters  
+- Price relative to longer-term trend  
+- Sector and economic-cycle phase checks  
 
-**Income Layer:** Monthly covered call premium collection
-on all eligible held positions — target 1-3% per month
+Exact thresholds and weights remain proprietary. Selection is systematic, not discretionary day-trading.
 
-**Risk Management:** Proprietary multi-rule exit framework
-- Technical and fundamental criteria evaluated daily
-- Exits are non-negotiable when rules trigger
-- Demonstrated in action: Stock 5 exited October 2026 when 
-  multiple rules triggered simultaneously
+**Income layer**  
+Monthly covered-call premium collection on eligible held positions, within defined rules.
 
-**Capital Protection:** Autonomous black swan protection
-- Volatility-based circuit breakers active at all times
-- Pre-market gap detection prevents adverse entries
-- Network failure safeguards with automatic standdown
+**Risk management**  
+Multi-rule exit framework. Technical and fundamental conditions are evaluated on a defined schedule. When exit rules trigger, exits are taken — not negotiated away.
+
+**Capital protection**  
+- Volatility-based risk guards  
+- Controls intended to limit adverse entries  
+- Operational safeguards if connectivity fails  
+- Client always holds funds in their own Alpaca or Tradier account and can revoke API access at any time  
 
 ---
 
-## Verified Position History
+## Verified Position History (anonymised)
 
-| Stock | Entry | Return | Status |
-|-------|-------|--------|--------|
-| Stock 1 | $268.34 | +25.6% | Active — CC running |
-| Stock 2 | $425.03 | +24.8% | Active — new high |
-| Stock 3 | $309.50 | +20.8% | Active — CC running |
-| Stock 4 | $31.43 | +4.1% | Active — dividend income |
-| Stock 5 | $29.04 | -20.6% | EXITED — 4 rules violated |
+| Position | Entry (ref) | Return | Status |
+|----------|-------------|--------|--------|
+| Stock 1 | — | +25.6% | Active — covered call running |
+| Stock 2 | — | +24.8% | Active |
+| Stock 3 | — | +20.8% | Active — covered call running |
+| Stock 4 | — | +4.1% | Active — income component |
+| Stock 5 | — | -20.6% | **Exited** — multiple exit rules triggered |
 
-Stock 5 was exited on 6 October 2026 when Rules 1, 2, 3 and 4 
-triggered simultaneously. This demonstrates the system's 
-rules-based discipline — exits are non-negotiable.
+Stock 5 was exited in October 2026 when several exit rules triggered together.  
+That is the process working as designed: capital protection over holding a broken thesis.
+
+Individual tickers are not published on the public ledger.
 
 ---
 
@@ -74,23 +82,30 @@ rules-based discipline — exits are non-negotiable.
 
 [strategy_performance_ledger.csv](./strategy_performance_ledger.csv)
 
-Updated automatically every weekday evening.
-147 rows of daily NAV, asset type, transaction side, 
-and rolling peak drawdown. No proprietary data exposed.
+Public daily NAV and drawdown fields for independent verification.  
+Updated on trading days. No proprietary code or ticker map in the public file.
 
 ---
 
-## Commercial Enquiries
+## B2B Licensing — LURAVA LTD
 
-This system is available for B2B managed account services
-via Alpaca API integration. Fee structure based on NAV tier.
+**Model:** quantitative data licensing (automated signals), not discretionary portfolio management and not a pooled fund.
 
-UK Limited Company — VAT registered — HMRC compliant
+**Delivery:** restricted API into the client’s own **Alpaca** or **Tradier** account.  
+**Custody:** 100% with the client.
 
-**Contact:** ak.quantsystem@proton.me
+| Capital allocated | Fee |
+|-------------------|-----|
+| Up to $100,000 | £300 per month (incl. UK VAT where applicable) |
+| $100,001 – $500,000 | £900 per month (incl. UK VAT where applicable) |
+| Above $500,000 | Greater of 10% of net new profits (High-Water Mark) or £2,700 per quarter (incl. UK VAT where applicable), plus £1,200 one-time onboarding (incl. UK VAT where applicable) |
+
+Eligible non-UK B2B subscribers may be outside scope for UK VAT under HMRC Place of Supply rules; the subscriber remains responsible for any local taxes.
+
+**Contact**  
+- Email: ak.quantsystem@proton.me  
+- LinkedIn (company): https://www.linkedin.com/company/lurava-ltd-financial-services/
 
 ---
 
-*Past performance is not indicative of future results. 
-This is a paper trading track record. All figures verified 
-from Alpaca Markets account statements.*
+*Past performance is not indicative of future results. This is a paper trading track record. Figures are taken from the public ledger and related account statements. The illustrative annualised figure is a simple annualisation of the period to date only and is not a forecast or guarantee of future performance.*
