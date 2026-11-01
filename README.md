@@ -14,20 +14,20 @@ Clients retain full custody at all times.
 
 | Metric | Value |
 |--------|-------|
-| As of | 28 October 2026 |
+| As of | 30 October 2026 |
 | Starting capital | $100,000 |
-| Current NAV | $112,955.65 |
-| Verified return | +12.96% |
-| Peak NAV | $113,814.07 |
-| Maximum drawdown (full ledger path) | 6.32% |
+| Current NAV | $113,355.42 |
+| Verified return | +13.36% |
+| Peak NAV | $114,341.69 |
+| Maximum drawdown (daily closes, broker history) | 7.31% |
 | Strategy | Quality equities + covered-call income |
 
 **Track record phases**
 
 | Phase | Period | Max drawdown (ledger path) |
 |-------|--------|----------------------------|
-| Phase 1 — development | Apr–Aug 2026 | 6.32% (guards still being completed) |
-| Phase 2 — full guards | Sep–Oct 2026 | 2.61% |
+| Phase 1 — development | Apr–Aug 2026 | 7.31% (guards still being completed) |
+| Phase 2 — full guards | Sep–Oct 2026 | 3.42% |
 
 Phase 2 is the period with the full risk-guard and exit framework active.
 
