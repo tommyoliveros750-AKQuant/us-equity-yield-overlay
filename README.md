@@ -3,7 +3,7 @@
 
 A rules-based US equity process: quality equities plus a covered-call income overlay.
 
-Published by **LURAVA LTD** (England & Wales, Company No. 16411816).
+Published by Tommy Oliveros.
 
 ### Important — please read
 
@@ -68,13 +68,7 @@ Tickers are not published. Stock 5 illustrates process: exit rules applied as de
 
 No real money was at risk. Live trading can differ on fills, costs, taxes, slippage, option assignment and market impact. Results do not reflect the pressure of trading real capital. **Past performance is not a reliable indicator of future results.**
 
----
-
-
-- **Model:** data / signal licensing — not discretionary portfolio management and not a pooled fund  
-- **Delivery:** restricted API into the subscriber’s **own** Alpaca or Tradier account  
-- **Custody:** 100% with the subscriber; LURAVA does not hold client money  
-- **Not provided:** investment advice; personal recommendations; discretionary management  
+--- 
 
 **Contact**  
 - Email: ak.quantsystem@proton.me  
