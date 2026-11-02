@@ -70,22 +70,11 @@ No real money was at risk. Live trading can differ on fills, costs, taxes, slipp
 
 ---
 
-## B2B data licensing (LURAVA LTD)
-
-Separate from this information page: LURAVA LTD may license **quantitative signal data** to business subscribers under a written Master Services Agreement.
 
 - **Model:** data / signal licensing — not discretionary portfolio management and not a pooled fund  
 - **Delivery:** restricted API into the subscriber’s **own** Alpaca or Tradier account  
 - **Custody:** 100% with the subscriber; LURAVA does not hold client money  
 - **Not provided:** investment advice; personal recommendations; discretionary management  
-
-| Capital allocated | Fee (per MSA) |
-|-------------------|---------------|
-| Up to $100,000 | £300 per month |
-| $100,001 – $500,000 | £900 per month |
-| Above $500,000 | Greater of 10% of net new profits (HWM) or £2,700 per quarter, plus £1,200 one-time onboarding |
-
-UK VAT / non-UK B2B treatment as set out in the MSA.
 
 **Contact**  
 - Email: ak.quantsystem@proton.me  
