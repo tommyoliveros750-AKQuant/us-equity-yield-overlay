@@ -1,111 +1,96 @@
 # AK Equity Income System
-## Verified Public Track Record
+## Public paper-trading record
 
-A systematic, rules-based equity income system on US markets:
-quality equities + covered-call income overlay.
+A rules-based US equity process: quality equities plus a covered-call income overlay.
 
-Operated for B2B licensing by **LURAVA LTD** (Company No. 16411816).
-Signals are delivered non-custodially into the client’s own brokerage account.
-Clients retain full custody at all times.
+Published by **LURAVA LTD** (England & Wales, Company No. 16411816).
+
+### Important — please read
+
+This is a **paper-trading record**: simulated results in a broker paper account. It is published for information only. It is **not** an offer, invitation or recommendation to invest or to use any service. Nothing on this page is investment advice or a personal recommendation.
 
 ---
 
-## Live Performance Metrics
+## Performance (paper account)
 
 | Metric | Value |
-|--------|-------|
+|--------|--------|
 | As of | 30 October 2026 |
+| Track record start | 17 April 2026 |
 | Starting capital | $100,000 |
 | Current NAV | $113,355.42 |
-| Verified return | +13.36% |
+| Return since start | +13.36% |
 | Peak NAV | $114,341.69 |
 | Maximum drawdown (daily closes, broker history) | 7.31% |
 | Strategy | Quality equities + covered-call income |
 
-**Track record phases**
+### Track record phases
 
-| Phase | Period | Max drawdown (ledger path) |
-|-------|--------|----------------------------|
+| Phase | Period | Max drawdown (daily closes) |
+|-------|--------|-----------------------------|
 | Phase 1 — development | Apr–Aug 2026 | 7.31% (guards still being completed) |
 | Phase 2 — full guards | Sep–Oct 2026 | 3.42% |
 
-Phase 2 is the period with the full risk-guard and exit framework active.
+Phase 2 is the period in which the full risk-guard and exit framework was active. The phases are shown separately because the system was still being built during Phase 1.
 
-> A small number of ledger rows showed NAV reset to starting capital; those rows were excluded from peak and drawdown path calculation. The full daily CSV remains public for inspection.
-
-Illustrative annualised rate of the period: about 26% (context only — not a forecast).
+Illustrative annualised rate of the period: about 26% (simple annualisation of the period to date only — **not** a forecast).
 
 ---
 
-## Strategy Overview
+## How the process works (high level)
 
-**Stock selection — rules-based scan (illustrative criteria)**  
-- Earnings growth and revenue growth thresholds  
-- Profitability and return-on-equity filters  
-- Price relative to longer-term trend  
-- Sector and economic-cycle phase checks  
+- **Selection:** rules-based screen (growth, profitability, trend, market-cycle conditions). Exact thresholds are not published.
+- **Income:** covered calls on eligible holdings under defined rules.
+- **Risk:** rules-based exits and volatility guards. When an exit rule triggers, the position is exited.
 
-Exact thresholds and weights remain proprietary. Selection is systematic, not discretionary day-trading.
+This describes a published process. It is not a personal recommendation.
 
-**Income layer**  
-Monthly covered-call premium collection on eligible held positions, within defined rules.
+### Anonymised position example (optional)
 
-**Risk management**  
-Multi-rule exit framework. Technical and fundamental conditions are evaluated on a defined schedule. When exit rules trigger, exits are taken — not negotiated away.
+| Position | Return | Status |
+|----------|--------|--------|
+| Stock 1–4 | positive (paper) | Active / income rules as applicable |
+| Stock 5 | negative (paper) | Exited when multiple exit rules triggered |
 
-**Capital protection**  
-- Volatility-based risk guards  
-- Controls intended to limit adverse entries  
-- Operational safeguards if connectivity fails  
-- Client always holds funds in their own Alpaca or Tradier account and can revoke API access at any time  
+Tickers are not published. Stock 5 illustrates process: exit rules applied as designed.
 
 ---
 
-## Verified Position History (anonymised)
-
-| Position | Entry (ref) | Return | Status |
-|----------|-------------|--------|--------|
-| Stock 1 | — | +25.6% | Active — covered call running |
-| Stock 2 | — | +24.8% | Active |
-| Stock 3 | — | +20.8% | Active — covered call running |
-| Stock 4 | — | +4.1% | Active — income component |
-| Stock 5 | — | -20.6% | **Exited** — multiple exit rules triggered |
-
-Stock 5 was exited in October 2026 when several exit rules triggered together.  
-That is the process working as designed: capital protection over holding a broken thesis.
-
-Individual tickers are not published on the public ledger.
-
----
-
-## Performance Ledger
+## Performance ledger
 
 [strategy_performance_ledger.csv](./strategy_performance_ledger.csv)
 
-Public daily NAV and drawdown fields for independent verification.  
-Updated on trading days. No proprietary code or ticker map in the public file.
+- One row per trading day from the broker paper account history  
+- No tickers, code or strategy parameters in the public file  
+- Drawdown on daily closes only (not intraday)
+
+### Limitations of paper-trading results
+
+No real money was at risk. Live trading can differ on fills, costs, taxes, slippage, option assignment and market impact. Results do not reflect the pressure of trading real capital. **Past performance is not a reliable indicator of future results.**
 
 ---
 
-## B2B Licensing — LURAVA LTD
+## B2B data licensing (LURAVA LTD)
 
-**Model:** quantitative data licensing (automated signals), not discretionary portfolio management and not a pooled fund.
+Separate from this information page: LURAVA LTD may license **quantitative signal data** to business subscribers under a written Master Services Agreement.
 
-**Delivery:** restricted API into the client’s own **Alpaca** or **Tradier** account.  
-**Custody:** 100% with the client.
+- **Model:** data / signal licensing — not discretionary portfolio management and not a pooled fund  
+- **Delivery:** restricted API into the subscriber’s **own** Alpaca or Tradier account  
+- **Custody:** 100% with the subscriber; LURAVA does not hold client money  
+- **Not provided:** investment advice; personal recommendations; discretionary management  
 
-| Capital allocated | Fee |
-|-------------------|-----|
-| Up to $100,000 | £300 per month (incl. UK VAT where applicable) |
-| $100,001 – $500,000 | £900 per month (incl. UK VAT where applicable) |
-| Above $500,000 | Greater of 10% of net new profits (High-Water Mark) or £2,700 per quarter (incl. UK VAT where applicable), plus £1,200 one-time onboarding (incl. UK VAT where applicable) |
+| Capital allocated | Fee (per MSA) |
+|-------------------|---------------|
+| Up to $100,000 | £300 per month |
+| $100,001 – $500,000 | £900 per month |
+| Above $500,000 | Greater of 10% of net new profits (HWM) or £2,700 per quarter, plus £1,200 one-time onboarding |
 
-Eligible non-UK B2B subscribers may be outside scope for UK VAT under HMRC Place of Supply rules; the subscriber remains responsible for any local taxes.
+UK VAT / non-UK B2B treatment as set out in the MSA.
 
 **Contact**  
 - Email: ak.quantsystem@proton.me  
-- LinkedIn (company): https://www.linkedin.com/company/lurava-ltd-financial-services/
+- LinkedIn: https://www.linkedin.com/company/lurava-ltd-financial-services/
 
 ---
 
-*Past performance is not indicative of future results. This is a paper trading track record. Figures are taken from the public ledger and related account statements. The illustrative annualised figure is a simple annualisation of the period to date only and is not a forecast or guarantee of future performance.*
+*Paper track record only. Not an offer or recommendation to invest. Not investment advice. Past performance is not a reliable guide to future results.*
