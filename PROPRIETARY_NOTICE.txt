@@ -1,12 +1,11 @@
 CONFIDENTIAL — PROPRIETARY TRADING SYSTEM
 ==========================================
 Owner: Tommy Oliveros
-Company: [Your UK Ltd Company Name]
 Created: 2026
 System: AK Trading System — Adam Khoo Whale Investor Methodology
 
 The software, rules, parameters, data models and operating procedures behind the AK Equity Income System are proprietary and confidential. They are not published in this repository.
 
-This repository contains only the public performance ledger (CSV) and the README. These may be quoted with attribution to LURAVA LTD.
+This repository contains only the public performance ledger (CSV) and the README. 
 
 No licence is granted to any source code, strategy rules or infrastructure. They may not be copied, reverse-engineered or redistributed.
