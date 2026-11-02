@@ -89,7 +89,7 @@ UK VAT / non-UK B2B treatment as set out in the MSA.
 
 **Contact**  
 - Email: ak.quantsystem@proton.me  
-- LinkedIn: https://www.linkedin.com/company/lurava-ltd-financial-services/
+
 
 ---
 
