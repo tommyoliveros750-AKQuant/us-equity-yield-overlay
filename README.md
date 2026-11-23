@@ -15,12 +15,12 @@ This is a **paper-trading record**: simulated results in a broker paper account.
 
 | Metric | Value |
 |--------|--------|
-| As of | 30 October 2026 |
+| As of | 20 November 2026 |
 | Track record start | 17 April 2026 |
 | Starting capital | $100,000 |
-| Current NAV | $113,355.42 |
+| Current NAV | $111,076.34 |
 | Return since start | +13.36% |
-| Peak NAV | $114,341.69 |
+| Peak NAV | $116,845.16 |
 | Maximum drawdown (daily closes, broker history) | 7.31% |
 | Strategy | Quality equities + covered-call income |
 
@@ -29,7 +29,7 @@ This is a **paper-trading record**: simulated results in a broker paper account.
 | Phase | Period | Max drawdown (daily closes) |
 |-------|--------|-----------------------------|
 | Phase 1 — development | Apr–Aug 2026 | 7.31% (guards still being completed) |
-| Phase 2 — full guards | Sep–Oct 2026 | 3.42% |
+| Phase 2 — full guards | Sep–Oct 2026 | 4.94% |
 
 Phase 2 is the period in which the full risk-guard and exit framework was active. The phases are shown separately because the system was still being built during Phase 1.
 
