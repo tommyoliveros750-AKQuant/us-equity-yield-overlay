@@ -19,7 +19,7 @@ This is a **paper-trading record**: simulated results in a broker paper account.
 | Track record start | 17 April 2026 |
 | Starting capital | $100,000 |
 | Current NAV | $113,996.67 |
-| Return since start | +13.36% |
+| Return since start | +14.00% |
 | Peak NAV | $116,845.16 |
 | Maximum drawdown (daily closes, broker history) | 7.31% |
 | Strategy | Quality equities + covered-call income |
