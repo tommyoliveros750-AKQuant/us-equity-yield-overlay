@@ -41,7 +41,7 @@ Illustrative annualised rate of the period: about 26% (simple annualisation of t
 
 - **Selection:** rules-based screen (growth, profitability, trend, market-cycle conditions). Exact thresholds are not published.
 - **Income:** covered calls on eligible holdings under defined rules.
-- **Risk:** rules-based exits and volatility guards. When an exit rule triggers, the position is exited.
+- **Risk:** each holding is checked daily against defined exit rules; when a rule triggers, the operator exits the position.
 
 This describes a published process. It is not a personal recommendation.
 
